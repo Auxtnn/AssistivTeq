@@ -7,6 +7,7 @@ import training from './training.png'
 import eye from './eye.png';
 import gift from './gift.png';
 import leaf from './leaf.png'
+import inclusive from './inclusive.png'
 
 
 
@@ -19,5 +20,6 @@ export {
   training,
   leaf,
   eye,
-  gift
+  gift,
+  inclusive
 }
