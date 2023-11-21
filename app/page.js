@@ -8,10 +8,12 @@ import {
   education, 
   skill, 
   training, 
-  people
+  people,
+  john
 } from '@/public/images'
 
 import Card from '@/components/Card'
+import Footer from '@/components/Footer'
 
 
 export default function Home() {
@@ -42,7 +44,7 @@ export default function Home() {
   return (
     <main className="">
       <section className='mt-[2.5rem] md:mt-[1.5rem] flex md:justify-between lg:px-[7rem]'>
-        <div className='flex flex-col items-center justify-center md:items-start  px-[1.19rem] md:gap-[2rem]'>
+        <div className='flex flex-col  md:items-start items-center justify-center md:gap-[2rem] w-screen'>
           <h1 className='max-w-[18rem] md:max-w-[29rem] leading-[2.7rem] md:leading-[3rem] text-[2rem] md:text-[3rem] font-[700] text-center md:text-left text-heading'>
             Building Bridges, Breaking Barriers
           </h1>
@@ -59,11 +61,11 @@ export default function Home() {
             Join Us
           </a>   
         </div>
-        <div className='hidden md:flex'>
+        <div className='hidden  md:flex'>
           <Image 
             src={headerImage}
             alt='header image'
-            className='relative w-[40rem] h-[33rem]'
+            className='relative w-[50rem] h-[27rem]'
           />
         </div>
       </section>
@@ -166,11 +168,55 @@ export default function Home() {
               Collaborate with organizations, non-profits, and government agencies to share knowledge and resources for driving positive change.            
             </li>
           </ul>
-          <a href='' className='md:hidden text-white bg-primary rounded-[1rem] px-[2rem] py-[1.13rem] mt-[3rem] font-[700] shadow-card h-[2.25rem]'>
+          <a href='' className=' text-white bg-primary rounded-[1rem] px-[2rem] py-[1.13rem] mt-[3rem] font-[700] shadow-card h-[2.25rem]'>
             Join Us
           </a>
         </article>
       </section>
+      {/* meet our memebers */}
+      <section className='bg-primary py-[2.2rem] md:py-[2.81rem] flex flex-col justify-center items-center mt-[3.1rem]'>
+        <h1 className='text-center text-[1.25rem] md:text-[2rem] font-[700] tracking-wide md:tracking-wider text-white mb-8'>
+          Meet Our Members
+        </h1>
+        <div className='flex flex-col items-center justify-center'>
+          <Image 
+            src={john}
+            alt='john doe'
+          />
+          <h1 className='text-[1.125rem] md:text-[1.5rem] font-[600] tracking-wide text-white mt-4'>
+            John Doe
+          </h1>
+          <h3 className='text-[1rem] font-[400] tracking-wide text-white text-center'>
+            Community Manager
+          </h3>
+        </div>
+        <p className='text-white font-normal text-[0.875rem] md:text-[1rem] text-center max-w-[20.7085rem] md:max-w-[33.36881rem] mt-4'>
+          "Discovering this inclusive tech community has been a game-changer for me. As someone with a disability, 
+          I often felt isolated, but here, I've found a supportive network that embraces diversity and empowers us through technology. 
+          Thanks to this community, I've learned, grown, and connected with like-minded individuals, making me feel part of something bigger than myself. 
+          I'm grateful to be a part of the Adaptive Tech Hub."
+        </p>
+      </section>
+      <section className=' flex flex-col items-center justify-center pb-[2.47rem] py-[2.53rem] md:py-[5rem]'>
+          <h1 className='text-heading text-[1.5rem] md:text-[2.25rem]  font-[700] tracking-wide text-center max-w-[11.625rem] md:max-w-[18.625rem]'>
+            Sign Up For Our Newsletter
+          </h1>
+          <div className='flex items-center gap-4 mt-[1.25rem] md:mt-[3.44rem]'>
+            <input 
+              placeholder='Enter your email'
+              className='px-[1.88rem] py-[0.63rem] w-[22rem] md:w-[45.1875rem] h-[2.25rem] md:h-[3.5rem] bg-gray-200 text-heading text-[1rem] rounded-[0.5rem] '
+            />
+            <a href='' className='hidden md:flex text-white bg-primary rounded-[0.5rem] py-[1.13rem] px-[2rem] font-[700] shadow-card h-[3.5rem] '>
+              Subscribe
+            </a>
+          </div>
+          {/* mobile btn */}
+          <a href='' className='md:hidden text-white bg-primary rounded-[0.5rem] flex items-center justify-center mt-[1rem] font-[700] shadow-card w-[9.875rem] h-[2.25rem]'>
+            Subscribe
+          </a>
+      </section>
+      {/* footer */}
+      <Footer />
     </main>
   )
 }
