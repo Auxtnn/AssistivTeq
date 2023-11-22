@@ -1,7 +1,7 @@
 export const footerLinks = [
   {
     title: 'NAVIGATION',
-    Links: [
+    links: [
       'Home', 
       'About Us', 
       'What we do', 
