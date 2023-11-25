@@ -15,6 +15,7 @@ import {
 } from '@/public/images'
 
 import Card from '@/components/Card'
+import MeetOurMembers from '@/components/MeetMembers';
 import Footer from '@/components/Footer'
 
 
@@ -112,7 +113,7 @@ export default function Home() {
       {/* what we provide section */}
       <section className='flex flex-col  justify-center items-center bg-[#66328E0D]  pb-[2.25rem] lg:pb-[4.39rem]'>
         {/* rectangle */}
-        <div className='absolute left-0 lg:-mt-[35.9rem] -mt-[113rem] md:-mt-[118rem]'>
+        <div className='absolute left-0 lg:-mt-[36.2rem] -mt-[113rem] md:-mt-[118rem]'>
           <svg xmlns="http://www.w3.org/2000/svg" width="51" height="72" viewBox="0 0 51 72" fill="none">
             <circle cx="9.50527" cy="30.0052" r="41.4874" transform="rotate(-14.2544 9.50527 30.0052)" fill="#66328E"/>
           </svg>
@@ -187,29 +188,8 @@ export default function Home() {
         </article>
       </section>
       {/* meet our memebers */}
-      <section className='bg-primary py-[2.2rem] md:py-[2.81rem] flex flex-col justify-center items-center mt-[3.1rem]'>
-        <h1 className='text-center text-[1.25rem] md:text-[2rem] font-[700] tracking-wide md:tracking-wider text-white mb-8'>
-          Meet Our Members
-        </h1>
-        <div className='flex flex-col items-center justify-center'>
-          <Image 
-            src={john}
-            alt='john doe'
-          />
-          <h1 className='text-[1.125rem] md:text-[1.5rem] font-[600] tracking-wide text-white mt-4'>
-            John Doe
-          </h1>
-          <h3 className='text-[1rem] font-[400] tracking-wide text-white text-center'>
-            Community Manager
-          </h3>
-        </div>
-        <p className='text-white font-normal text-[0.875rem] md:text-[1rem] text-center max-w-[20.7085rem] md:max-w-[33.36881rem] mt-4'>
-          "Discovering this inclusive tech community has been a game-changer for me. As someone with a disability, 
-          I often felt isolated, but here, I've found a supportive network that embraces diversity and empowers us through technology. 
-          Thanks to this community, I've learned, grown, and connected with like-minded individuals, making me feel part of something bigger than myself. 
-          I'm grateful to be a part of the Adaptive Tech Hub."
-        </p>
-      </section>
+      <MeetOurMembers />
+
       <section className=' flex flex-col items-center justify-center pb-[2.47rem] py-[2.53rem] md:py-[5rem]'>
         <h1 className='text-heading text-[1.5rem] md:text-[2.25rem]  font-[700] tracking-wide text-center max-w-[11.625rem] md:max-w-[18.625rem]'>
           Sign Up For Our Newsletter

@@ -19,6 +19,8 @@ import gallery4 from './gallery_4.png'
 import vector from './vector.png'
 import serviceHero from './serviceHero.png'
 import mobileHeader from './service_header_m.png'
+import Group from './Group.png'
+
 export {
   education,
   headerImage,
@@ -40,5 +42,6 @@ export {
   gallery4,
   vector,
   serviceHero,
-  mobileHeader
+  mobileHeader,
+  Group
 }

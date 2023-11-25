@@ -1,10 +1,23 @@
 "use client";
 import React, { useState } from "react";
 import { navLinks } from "@/constant";
+import Form from "./Form";
 import { HiMenuAlt1, HiX } from "react-icons/hi";
 
 const Nav = () => {
   const [toggle, setIsToggle] = useState(false);
+
+  const [openModal, setOpenModal] = useState(false)
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpenModal(!openModal)
+    setOpen(!open)
+  };
+  const handleClose = () => {
+    setOpen(!open)
+    setOpenModal(!openModal)
+  };
 
   return (
     <nav className="px-[1.16rem] pt-[.7rem] md:pt-[1.5rem] md:pl-[7rem] justify-between items-center flex md:pr-[5.7rem] border-b-2 pb-4">
@@ -75,15 +88,22 @@ const Nav = () => {
               {" "}
               Form
             </a>
-            <a
-              href=""
+            <button
+              onClick={handleOpen}
               className="text-white bg-primary rounded-[1rem] px-[2rem] py-[.75rem] h-[3rem] uppercase"
             >
               Join Us
-            </a>
+            </button>
           </ul>
         </div>
       </div>
+      {openModal && (
+        <Form 
+          handleClose={handleClose}
+          open={open}
+        />
+      )}
+      
     </nav>
   );
 };
