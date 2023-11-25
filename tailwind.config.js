@@ -18,7 +18,7 @@ module.exports = {
 
       },
       fontFamily: {
-        poppings: ["Poppings"],
+        poppings: ['Poppins', 'sans-serif'],
       },
       boxShadow: {
         card: '1px 3px 2px 2px rgba(37, 33, 40, 0.25);',

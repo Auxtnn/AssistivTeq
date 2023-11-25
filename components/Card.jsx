@@ -11,10 +11,10 @@ const Card = ({ title, text, logo }) => {
           className='relative'
         />
       </div>
-      <h1 className='text-[1.125rem] md:text-[1.5rem] font-[600] text-[#252128] mt-[1.38rem] md:mt-[1.18rem] mb-[.75rem]'>
+      <h1 className='text-[1.125rem] md:text-[1.5rem] font-[600] text-[#252128] mt-[1.38rem] md:mt-[1.18rem] mb-[.75rem] tracking-[0.06rem]'>
         {title}
       </h1>
-      <p className='text-heading text-center md:text-left text-[.875rem] md:text-[1rem] tracking-wider'>
+      <p className='text-heading text-center md:text-left text-[.875rem] md:text-[1rem] tracking-[0.04rem]'>
         {text}
       </p>
     </div>
