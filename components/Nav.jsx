@@ -30,17 +30,17 @@ const Nav = () => {
               {navLinks.map((link, key) => {
                 return (
                   <li key={key + link} className="flex flex-col gap-[3rem]">
-                    <a href="" key={`${key} + 1`} className="text-white ">
+                    <a href={link} key={`${key} + 1`} className="text-white uppercase">
                       {link}
                     </a>
                   </li>
                 );
               })}
-              <a href="" className="text-white">
+              <a href="" className="text-white uppercase">
                 {" "}
                 Form
               </a>
-              <a href="" className="text-white">
+              <a href="" className="text-white uppercase">
                 Join us
               </a>
             </ul>
@@ -59,9 +59,9 @@ const Nav = () => {
                   className="flex flex-col gap-[3rem] flex-wrap"
                 >
                   <a
-                    href=""
+                    href={link}
                     key={`${key} + 1`}
-                    className="text-heading text-[1rem] font-[600] tracking-[0.08rem]"
+                    className="text-heading text-[1rem] font-[600] tracking-[0.08rem] uppercase"
                   >
                     {link}
                   </a>
@@ -70,14 +70,14 @@ const Nav = () => {
             })}
             <a
               href=""
-              className="text-heading text-[1rem] font-[600] tracking-[0.08rem]"
+              className="text-heading text-[1rem] font-[600] tracking-[0.08rem] uppercase"
             >
               {" "}
               Form
             </a>
             <a
               href=""
-              className="text-white bg-primary rounded-[1rem] px-[2rem] py-[.75rem] h-[3rem]"
+              className="text-white bg-primary rounded-[1rem] px-[2rem] py-[.75rem] h-[3rem] uppercase"
             >
               Join Us
             </a>

@@ -42,4 +42,4 @@ export const footerLinks = [
   }
 ]
 
-export const navLinks = ['Home', 'About-us', 'Supports']
+export const navLinks = ['home', 'about', 'supports']

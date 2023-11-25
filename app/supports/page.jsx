@@ -9,11 +9,11 @@ const service = () => {
     <main>
       <Image 
         src={serviceHero}
-        className='hidden md:flex relative'
+        className='hidden md:flex relative w-[100%]'
       />
       <Image 
         src={mobileHeader}
-        className='relative flex md:hidden '
+        className='relative flex md:hidden w-[100%]'
       />
       {/* Header */}
       <div className='flex flex-col gap-3 items-center justify-center mt-[2.5rem] lg:mt-[5rem]'>
