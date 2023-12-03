@@ -42,4 +42,9 @@ export const footerLinks = [
   }
 ]
 
-export const navLinks = ['home', 'about', 'supports']
+
+export const navLinks = [
+  {href: '/', key:'home', title:'Home'},
+  {href: '/about', key:'about', title:'About Us'},
+  {href: '/supports', key:'support', title:'Supports'},
+]

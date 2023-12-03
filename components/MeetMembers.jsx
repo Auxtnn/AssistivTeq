@@ -44,7 +44,7 @@ const MeetOurMembers = () => {
   return (
     <section className='bg-primary py-[2.2rem] md:py-[2.81rem] flex flex-col justify-center items-center mt-[3.1rem]'>
       {/* corner design */}
-      <div className='hiddden lg:flex absolute right-0 mb-[35.5rem]'>
+      <div className='hidden lg:flex absolute right-0 mb-[35.5rem]'>
         <Image 
           src={Group}
           alt='design'

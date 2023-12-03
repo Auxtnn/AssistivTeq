@@ -40,11 +40,11 @@ const Nav = () => {
               onClick={() => setIsToggle(!toggle)}
             />
             <ul className="flex flex-col gap-[2.5rem] mt-[3rem] pl-[2rem]">
-              {navLinks.map((link, key) => {
+              {navLinks.map((items) => {
                 return (
-                  <li key={key + link} className="flex flex-col gap-[3rem]">
-                    <a href={link} key={`${key} + 1`} className="text-white uppercase">
-                      {link}
+                  <li key={items.key} className="flex flex-col gap-[3rem]">
+                    <a href={items.href} key={`${items.key} + 1`} className="text-white uppercase">
+                      {items.title}
                     </a>
                   </li>
                 );
@@ -65,22 +65,15 @@ const Nav = () => {
       <div className="hidden lg:flex">
         <div className="items-center justify-center">
           <ul className="flex  gap-[2.5rem] items-center  ">
-            {navLinks.map((link, key) => {
-              return (
-                <li
-                  key={key + link}
-                  className="flex flex-col gap-[3rem] flex-wrap"
-                >
-                  <a
-                    href={link}
-                    key={`${key} + 1`}
-                    className="text-heading text-[1rem] font-[600] tracking-[0.08rem] uppercase"
-                  >
-                    {link}
-                  </a>
-                </li>
-              );
-            })}
+            {navLinks.map((items) => {
+                return (
+                  <li key={items.key} className="flex flex-col gap-[3rem] flex-wrap">
+                    <a href={items.href} key={`${items.key} + 1`} className="text-heading text-[1rem] font-[600] tracking-[0.08rem] uppercase">
+                      {items.title}
+                    </a>
+                  </li>
+                );
+              })}
             <a
               href=""
               className="text-heading text-[1rem] font-[600] tracking-[0.08rem] uppercase"
@@ -98,10 +91,12 @@ const Nav = () => {
         </div>
       </div>
       {openModal && (
-        <Form 
-          handleClose={handleClose}
-          open={open}
-        />
+        <div className="absolute right-[50%]">
+          <Form 
+            handleClose={handleClose}
+            open={open}
+          />
+        </div>
       )}
       
     </nav>

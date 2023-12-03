@@ -79,7 +79,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className='mt-[2.7rem] lg:mt-[6.23rem] lg:px-[7rem] flex flex-col items-center lg:items-start'>
+      <section className='mt-[2.7rem] lg:mt-[6.23rem] lg:px-[7rem] flex flex-col items-center '>
         <div className='flex flex-col lg:flex-row items-center lg:gap-[15rem]'>
           <div className='text-center md:text-left max-w-[21rem] lg:max-w-[24.5rem] mb-4'>
             <h1 className='text-heading text-[1.5rem] md:text-[2.25rem] font-[700] tracking-[0.09rem]'>
@@ -92,7 +92,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className='mt-[2.5rem] md:mt-[6.5rem] flex flex-col lg:flex-row gap-[1.25rem] md:gap-[3.38rem] md:flex-wrap md:flex-grow pb-7'>
+        <div className='mt-[2.5rem] md:mt-[6.5rem] flex flex-col lg:flex-row gap-[1.25rem] md:gap-[3.38rem] md:flex-wrap md:justify-center md:flex-shrink pb-7'>
           <Card 
             logo={eye}
             title='Our Vision'
@@ -113,20 +113,20 @@ export default function Home() {
       {/* what we provide section */}
       <section className='flex flex-col  justify-center items-center bg-[#66328E0D]  pb-[2.25rem] lg:pb-[4.39rem]'>
         {/* rectangle */}
-        <div className='absolute left-0 lg:-mt-[36.2rem] -mt-[113rem] md:-mt-[118rem]'>
+        {/* <div className='absolute left-0 lg:-mt-[36.2rem] -mt-[113rem] md:-mt-[118rem]'>
           <svg xmlns="http://www.w3.org/2000/svg" width="51" height="72" viewBox="0 0 51 72" fill="none">
             <circle cx="9.50527" cy="30.0052" r="41.4874" transform="rotate(-14.2544 9.50527 30.0052)" fill="#66328E"/>
           </svg>
-        </div> 
-        <div className='flex lg:gap-[35rem] mt-[2.73rem] lg:mt-[5.48rem] items-center'>
+        </div>  */}
+        <div className='flex lg:gap-[30rem] mt-[2.73rem] lg:mt-[5.48rem] items-center'>
           <h1 className='w-[16.54rem] text-[1.25rem] lg:w-[27.41213rem] md:text-[2rem] font-[700] tracking-[0.08rem] text-center lg:text-left text-heading '> 
             The Support Adaptive Tech Hub Provides
           </h1>
-          <a href='' className='hidden lg:flex text-white bg-primary rounded-[1rem] px-[2rem] py-[1.13rem] md:mt-0 font-[700] shadow-card h-[3.5rem]'>
+          <a href='' className='hidden lg:flex text-white bg-primary rounded-[1rem] w-[7.35rem] h-[3.5rem] items-center justify-center md:mt-0 font-[700] shadow-card '>
             View More
           </a>
         </div>
-        <article className='mt-[2.5rem] lg:mt-[5rem] flex flex-col gap-[1.5rem] lg:flex-row md:flex-wrap'>
+        <article className='mt-[2.5rem] lg:mt-[5rem] flex flex-col gap-[1.5rem] lg:flex-row md:flex-wrap md:justify-center'>
           {provideCards({
             title: 'Inclusive Community',
             image: inclusive
@@ -153,7 +153,7 @@ export default function Home() {
         </a>
       </section>
       <section className='flex flex-col md:flex-row-reverse items-center md:items-center md:justify-between pt-[2.5rem] md:px-[12.56rem]'>
-        <div>
+        <div className='w-[50%]'>
           <Image 
             src={people}
             alt='people'
