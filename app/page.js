@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import { GoDotFill } from "react-icons/go";
 import { motion } from 'framer-motion';
@@ -57,13 +58,23 @@ export default function Home() {
       />
       <section className='mt-[2.5rem] lg:mt-[1.5rem] flex lg:justify-between lg:px-[7rem]'>
         <div className='flex flex-col  lg:items-start items-center justify-center md:gap-[1.5rem] w-screen'>
-          <h1 className=' lg:w-[29rem] md:w-[20rem] tracking-[.06rem] text-[2rem] lg:text-[3rem] font-[700] text-center lg:text-left text-heading'>
+          <motion.div 
+            initial={{opacity: 0}}
+            // whileInView={{ y: [100, 0]}}
+            whileInView={[{ y: [100, 0]}, {opacity: 1}]}
+            transition={{ duration: 0.85, ease: 'easeIn' }}       
+            className=' lg:w-[29rem] md:w-[20rem] tracking-[.06rem] text-[2rem] lg:text-[3rem] font-[700] text-center lg:text-left text-heading'
+          >
             Building Bridges, Breaking Barriers
-          </h1>
-          <p className='w-[21rem] md:w-[30rem] lg:text-left text-heading opacity-80 text-[1.125rem] tracking-[0.0225rem] text-center mt-[2.5rem] md:mt-0 md:leading-[2rem]'>
+          </motion.div>
+          <motion.div
+            initial={{opacity: 0}}
+            whileInView={{opacity: 1}}
+            className='w-[21rem] md:w-[30rem] lg:text-left text-heading opacity-80 text-[1.125rem] tracking-[0.0225rem] text-center mt-[2.5rem] md:mt-0 md:leading-[2rem]'
+          >
             A tech community that celebrates diversity and champions equality. Together, 
             we're breaking down barriers and creating a world where every person's abilities shine.
-          </p>
+          </motion.div>
           <Image 
             src={headerImage}
             alt='header image'
@@ -73,13 +84,18 @@ export default function Home() {
             Join Us
           </a>   
         </div>
-        <div className='hidden lg:flex'>
+        {/* Large screen header image */}
+        <motion.div 
+          whileInView={{x: [100, 0]}}
+          className='hidden lg:flex'
+          transition={{ duration: 0.8, ease: 'easeInOut' }}       
+        >
           <Image 
             src={headerImage}
             alt='header image'
             className='relative w-[50rem] h-[27rem]'
           />
-        </div>
+        </motion.div>
       </section>
       <section className='mt-[2.7rem] lg:mt-[6.23rem] lg:px-[7rem] flex flex-col items-center '>
         <div className='flex flex-col lg:flex-row items-center lg:gap-[15rem]'>
@@ -88,11 +104,16 @@ export default function Home() {
               Adaptive Tech Hub Community
             </h1>
           </div>
-          <div className='max-w-[20rem] md:max-w-[34rem] text-center lg:text-left text-heading opacity-80 tracking-wider'>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: 'easeInOut'}}
+            className='max-w-[20rem] md:max-w-[34rem] text-center lg:text-left text-heading opacity-80 tracking-wider'
+          >
             <p className='text-[1rem] tracking-[0.04rem]'>
               We are the beacon of inclusive support in tech providing valuable resources, training, and a warm community to accommodate diversity, champion equality, and work tirelessly to create a more inclusive world where every person's unique abilities are recognized and celebrated.
             </p>
-          </div>
+          </motion.div>
         </div>
         <div className='mt-[2.5rem] md:mt-[6.5rem] flex flex-col lg:flex-row gap-[1.25rem] md:gap-[3.38rem] md:flex-wrap md:justify-center md:flex-shrink pb-7'>
           <Card 

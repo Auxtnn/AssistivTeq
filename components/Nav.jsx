@@ -3,6 +3,11 @@ import React, { useState } from "react";
 import { navLinks } from "@/constant";
 import Form from "./Form";
 import { HiMenuAlt1, HiX } from "react-icons/hi";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 const Nav = () => {
   const [toggle, setIsToggle] = useState(false);
@@ -17,6 +22,11 @@ const Nav = () => {
   const handleClose = () => {
     setOpen(!open)
     setOpenModal(!openModal)
+  };
+  const [age, setAge] = useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
   };
 
   return (
@@ -74,13 +84,25 @@ const Nav = () => {
                   </li>
                 );
               })}
-            <a
-              href=""
-              className="text-heading text-[1rem] font-[600] tracking-[0.08rem] uppercase"
-            >
-              {" "}
-              Form
-            </a>
+           
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
+              <Select
+                value={age}
+                onChange={handleChange}
+                displayEmpty
+                inputProps={{ 'aria-label': 'Without label' }}
+              >
+                <MenuItem value="">
+                  <p className="text-heading text-[1rem] font-[600] tracking-[0.08rem] uppercase">
+                    {" "}
+                    Form
+                  </p>
+                </MenuItem>
+                <MenuItem value={10}>Counsellor</MenuItem>
+                <MenuItem value={20}>Volunteer</MenuItem>
+                <MenuItem value={30}>Partner</MenuItem>
+              </Select>
+            </FormControl>
             <button
               onClick={handleOpen}
               className="text-white bg-primary rounded-[1rem] px-[2rem] py-[.75rem] h-[3rem] uppercase"
