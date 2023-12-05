@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import { GoDotFill } from "react-icons/go";
+import { motion } from 'framer-motion';
+
 import { 
   headerImage, 
   gift, 

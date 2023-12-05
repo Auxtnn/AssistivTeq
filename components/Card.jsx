@@ -1,9 +1,18 @@
+'use client'
+
 import Image from 'next/image'
 import React from 'react'
+import { motion } from 'framer-motion';
 
 const Card = ({ title, text, logo }) => {
   return (
-    <div className='w-[18.3rem] h-[19.3] md:w-[22.75rem] md:h-[24.125rem] py-[1.47rem] md:py-[1.44rem] px-[.63rem] md:px-[1.34rem] border rounded-[1.875rem] shadow-card items-center md:items-start flex flex-col'>
+    <motion.div 
+      whileHover={{ scale: 1.1 }}
+      // initial={{ opacity: 0 }}
+      whileInView={{ y: [100, 0]}}
+      transition={{ duration: 0.85, ease: 'easeIn' }} 
+      className='w-[18.3rem] h-[19.3] md:w-[22.75rem] md:h-[24.125rem] py-[1.47rem] md:py-[1.44rem] px-[.63rem] md:px-[1.34rem] border rounded-[1.875rem] shadow-card items-center md:items-start flex flex-col'
+    >
       <div className='w-[4.35rem] h-[4.35rem] bg-primary rounded-[50%] items-center justify-center flex'>
         <Image 
           src={logo}
@@ -17,7 +26,7 @@ const Card = ({ title, text, logo }) => {
       <p className='text-heading text-center md:text-left text-[.875rem] md:text-[1rem] tracking-[0.04rem]'>
         {text}
       </p>
-    </div>
+    </motion.div>
   )
 }
 
