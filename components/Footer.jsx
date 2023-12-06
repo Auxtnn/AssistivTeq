@@ -14,7 +14,10 @@ const Footer = () => {
           <a className="w-[7.75rem] h-[3.5rem] flex items-center justify-center bg-primary text-white rounded-[0.5rem] border-2 border-white font-[700]">
             Donate
           </a>
-          <a className="w-[7.75rem] h-[3.5rem] flex items-center justify-center bg-white text-primary rounded-[0.5rem] font-[700]">
+          <a
+            href="#header"
+            className="w-[7.75rem] h-[3.5rem] flex items-center justify-center bg-white text-primary rounded-[0.5rem] font-[700]"
+          >
             Join Us
           </a>
         </div>
@@ -30,12 +33,12 @@ const Footer = () => {
                 {section.links.map((links, key) => {
                   return (
                     <li key={key}>
-                      <a
+                      <p
                         className="text-white opacity-[.79] text-[.75rem]"
                         href=""
                       >
                         {links}
-                      </a>
+                      </p>
                     </li>
                   );
                 })}
@@ -60,7 +63,7 @@ const Footer = () => {
             </div>
             <div>
               <p className="text-[.625rem] leading-[1.875rem] text-white">
-                © 2023 AdaptiveTechHub Media. All Rights Reserved.
+                © 2023 AssistivTeq Media. All Rights Reserved.
               </p>
             </div>
           </div>
