@@ -15,14 +15,14 @@ const MeetOurMembers = () => {
         "Discovering this inclusive tech community has been a game-changer for me. As someone with a disability, I often felt isolated, but here, I've found a supportive network that embraces diversity and empowers us through technology. Thanks to this community, I've learned, grown, and connected with like-minded individuals, making me feel part of something bigger than myself. I'm grateful to be a part of the Adaptive Tech Hub."
     },
     {
-      name: 'Austin Ikechuchkwu',
+      name: 'Nnanweobi Ikechukwu',
       role: 'Community Manager',
       imageSrc: john,
       quote:
         "Discovering this inclusive tech community has been a game-changer for me. As someone with a disability, I often felt isolated, but here, I've found a supportive network that embraces diversity and empowers us through technology. Thanks to this community, I've learned, grown, and connected with like-minded individuals, making me feel part of something bigger than myself. I'm grateful to be a part of the Adaptive Tech Hub."
     },
     {
-      name: 'Kosisochuckwu',
+      name: 'Okwuosa Kosisochuckwu',
       role: 'Community Manager',
       imageSrc: john,
       quote:
@@ -49,6 +49,7 @@ const MeetOurMembers = () => {
           src={Group}
           alt='design'
           className='relative'
+        
         />
       </div>
       <h1 className='text-center text-[1.25rem] md:text-[2rem] font-[700] tracking-wide md:tracking-wider text-white mb-8'>
