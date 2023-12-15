@@ -48,3 +48,10 @@ export const navLinks = [
   {href: '/about', key:'about', title:'About Us'},
   {href: '/supports', key:'support', title:'Supports'},
 ]
+export const mainNavLinks = [
+  {href: '/', key:'home', title:'Home'},
+  {href: '/about', key:'about', title:'About Us'},
+  {href: '#products', key:'products', title:'Products'},
+  {href: '/community', key:'community', title:'Community'},
+  {href: '/blog', key:'Blog', title:'Blog'}
+]
