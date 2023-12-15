@@ -20,6 +20,7 @@ import vector from './vector.png'
 import serviceHero from './serviceHero.png'
 import mobileHeader from './service_header_m.png'
 import Group from './Group.png'
+import onWheelChair from './onWheelChair.png'
 
 export {
   education,
@@ -43,5 +44,6 @@ export {
   vector,
   serviceHero,
   mobileHeader,
-  Group
+  Group,
+  onWheelChair
 }

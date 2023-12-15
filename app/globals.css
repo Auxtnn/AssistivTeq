@@ -8,6 +8,16 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+@keyframes marquee {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite; /* Adjust duration and timing */
+}
+
+
 
 
 
