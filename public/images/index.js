@@ -21,7 +21,7 @@ import serviceHero from './serviceHero.png'
 import mobileHeader from './service_header_m.png'
 import Group from './Group.png'
 import onWheelChair from './onWheelChair.png'
-
+import icon3 from './icon3.png'
 export {
   education,
   headerImage,
@@ -45,5 +45,6 @@ export {
   serviceHero,
   mobileHeader,
   Group,
-  onWheelChair
+  onWheelChair,
+  icon3
 }
