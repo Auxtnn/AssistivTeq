@@ -1,7 +1,12 @@
 import Image from "next/image";
 import React from "react";
 import { icon3 } from "@/public/images";
-import { MdAssistWalker, MdHearing, MdOutlineSportsGolf, MdOutlineDashboardCustomize } from "react-icons/md";
+import {
+  MdAssistWalker,
+  MdHearing,
+  MdOutlineSportsGolf,
+  MdOutlineDashboardCustomize,
+} from "react-icons/md";
 import { IoEyeOutline, IoAppsOutline } from "react-icons/io5";
 import { SiGoogleassistant } from "react-icons/si";
 import { GiBrain } from "react-icons/gi";
@@ -45,45 +50,59 @@ const Products = () => {
         </div>
 
         {/* Product cards */}
-        <div className="mt-[2.75rem] md:mt-[3.7rem] flex flex-col md:flex-row md:flex-wrap px-8 md:px-0 gap-[1.75rem] lg:gap-[3.25rem] justify-center">
+        <div className="mt-[2.75rem] md:-ml-[3rem] md:mt-[3.7rem] flex flex-col md:flex-row md:flex-wrap px-8 md:px-0 gap-[1.75rem] lg:gap-[3.25rem] justify-center">
           {productCard({
             // mt: '3rem',
-            icon: <MdAssistWalker className="text-primary w-[3.06rem] h-[3.06rem]"/>,
+            icon: (
+              <MdAssistWalker className="text-primary w-[3.06rem] h-[3.06rem]" />
+            ),
             heading: "Mobility Assistant",
             text: "Move Freely, live independently: Discover Our Mobility Solutions for you",
           })}
           {productCard({
-            icon: <IoEyeOutline  className="text-primary w-[3.06rem] h-[3.06rem]"/>,
+            icon: (
+              <IoEyeOutline className="text-primary w-[3.06rem] h-[3.06rem]" />
+            ),
             heading: "Vision Devices",
             text: "See the World Anew: Empowering Lives with Our Vision Devices",
           })}
           {productCard({
-            icon: <MdHearing className="text-primary w-[3.06rem] h-[3.06rem]"/>,
+            icon: (
+              <MdHearing className="text-primary w-[3.06rem] h-[3.06rem]" />
+            ),
             heading: "Hearing Aids",
             text: "Sounds of Inclusion: Enhancing Hearing with Our Cutting-Edge Aids",
           })}
           {productCard({
-            icon: <SiGoogleassistant className="text-primary w-[3.06rem] h-[3.06rem]"/>,
+            icon: (
+              <SiGoogleassistant className="text-primary w-[3.06rem] h-[3.06rem]" />
+            ),
             heading: "Speech Devices",
             text: "Express Yourself with Confidence: Unlock Potential Through Speech Devices",
           })}
           {productCard({
-            icon: <GiBrain className="text-primary w-[3.06rem] h-[3.06rem] "/>,
+            icon: <GiBrain className="text-primary w-[3.06rem] h-[3.06rem] " />,
             heading: "Cognitive Support",
             text: "Mindful Assistance: Nurturing Cognitive Well-being with Our Supportive Solutions",
           })}
           {productCard({
-            icon: <IoAppsOutline className="text-primary w-[3.06rem] h-[3.06rem]"/>,
+            icon: (
+              <IoAppsOutline className="text-primary w-[3.06rem] h-[3.06rem]" />
+            ),
             heading: "Assistive Apps",
             text: "Seamless Living, One App at a Time: Explore Our Assistive Applications",
           })}
           {productCard({
-            icon: <MdOutlineSportsGolf className="text-primary w-[3.06rem] h-[3.06rem]"/>,
+            icon: (
+              <MdOutlineSportsGolf className="text-primary w-[3.06rem] h-[3.06rem]" />
+            ),
             heading: "Adaptive Sports",
             text: "Play Without Limits: Embrace the Thrill of Adaptive Sports with Our Equipment",
           })}
           {productCard({
-            icon: <MdOutlineDashboardCustomize className="text-primary w-[3.06rem] h-[3.06rem]"/>,
+            icon: (
+              <MdOutlineDashboardCustomize className="text-primary w-[3.06rem] h-[3.06rem]" />
+            ),
             heading: "Customized Aid",
             text: "Tailored for You: Unleashing Possibilities with Our Custom Assistive Solutions",
           })}

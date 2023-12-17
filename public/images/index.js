@@ -22,6 +22,7 @@ import mobileHeader from './service_header_m.png'
 import Group from './Group.png'
 import onWheelChair from './onWheelChair.png'
 import icon3 from './icon3.png'
+import groupofpeople from './groupOfPeople.png'
 export {
   education,
   headerImage,
@@ -46,5 +47,6 @@ export {
   mobileHeader,
   Group,
   onWheelChair,
-  icon3
+  icon3,
+  groupofpeople
 }
