@@ -56,16 +56,22 @@ const Hero = () => {
               independence starts here
             </p>
             <div className="flex gap-[0.75rem] md:gap-[1.12rem] mt-[2.5rem]">
-              <button className="text-white hover:bg-white hover:text-primary hover:border-2 bg-primary rounded-[1rem] px-[1rem] md:px-[2rem] py-[1.13rem] md:mt-0 font-[700]">
+              <a
+                href="#contact"
+                className="text-white hover:bg-white hover:text-primary hover:border-2 bg-primary rounded-[1rem] px-[1rem] md:px-[2rem] py-[1.13rem] md:mt-0 font-[700]"
+              >
                 Contact Us
-              </button>
-              <button className="text-primary hover:bg-primary hover:text-white bg-white rounded-[1rem] border-primary border-2 px-[1rem] md:px-[2rem] py-[1.13rem] md:mt-0 font-[700]">
+              </a>
+              <a
+                href="#about"
+                className="text-primary hover:bg-primary hover:text-white bg-white rounded-[1rem] border-primary border-2 px-[1rem] md:px-[2rem] py-[1.13rem] md:mt-0 font-[700]"
+              >
                 Learn More
-              </button>
+              </a>
             </div>
           </div>
           <div className="mt-12 md:mt-0 ">
-            <Image src={onWheelChair} alt="Image wheelchair" className="" />
+            <Image src={onWheelChair} alt="Image wheelchair" className="" priority quality={100}/>
           </div>
         </div>
       </section>

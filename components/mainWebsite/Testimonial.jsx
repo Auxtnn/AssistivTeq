@@ -48,6 +48,7 @@ const Testimonial = () => {
           <Image
             src={image}
             fill
+            sizes="w-auto h-auto"
             alt="Testimonial image"
             className="relative w-auto h-auto"
           />
@@ -56,12 +57,12 @@ const Testimonial = () => {
           <p className=" opacity-80 w-[8.7rem] lg:w-[19.54rem] text-heading text-xs tracking-[0.035rem]">
             {text}
           </p>
-          <p className="opacity-80 text-heading text-[1rem] tracking-[0.04rem] font-medium">
+          <span className="opacity-80 text-heading text-[1rem] tracking-[0.04rem] font-medium">
             {name}
             <p className=" opacity-80 text-heading text-[1rem] tracking-[0.035rem]">
               {disability}
             </p>
-          </p>
+          </span>
         </div>
       </div>
     );

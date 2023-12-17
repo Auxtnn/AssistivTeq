@@ -4,11 +4,11 @@ export const footerLinks = [
   {
     title: 'NAVIGATION',
     links: [
-      'Home', 
-      'About Us', 
-      'What we do', 
-      'Join Us', 
-      'Form'
+      {title: 'Home', href: '/'},
+      {title: 'About Us', href: '#about'},
+      {title: 'What we do', href: '#product'},
+      {title: 'Join Us', href: '/community'},
+      {title: 'Form', href: '#contact'}
     ]
   },
   {
@@ -26,20 +26,64 @@ export const footerLinks = [
   {
     title: 'LEGAL',
     links: [
-      'General Info',
-      'Privacy Policy',
-      'Terms of Service'
+      {title: 'General Info', href: ''},
+      {title: 'Privacy Policy', href: '/policy'},
+      {title: 'Terms of Service', href: '/terms'}
     ]
   },
   {
     title: 'TALK TO US',
     links: [
-      'Support@AdaptiveTechHub.com',
-      '+23466 2399 1145',
-      'Contact Us',
-      'Facebook',
-      'Linkedin',
-      'Twitter'
+      {title: 'Support@Assistivteq.com', href: 'mailto:support@assistivteq.com'},
+      {title: '+2349120026559', href: 'tel:+2349120026559'},
+      {title: 'Contact Us', href: '#contact'},
+      {title: 'Facebook', href: '/'},
+      {title: 'Instagram', href: '/'},
+      {title: 'LinkedIn', href: '/'}
+    ]
+  }
+]
+
+
+export const mainFooterLinks = [
+  {
+    title: 'NAVIGATION',
+    links: [
+      {title: 'Home', href: '/'},
+      {title: 'About Us', href: '#about'},
+      {title: 'Products', href: '#product'},
+      {title: 'Community', href: '/community'},
+      {title: 'Contact Us', href: '#contact'}
+    ]
+  },
+  {
+    title: 'Products',
+    links: [
+      'Mobility Devices',
+      'Vision Devices',
+      'Hearing Aids',
+      'Cognitive Support',
+      'Speech Devices',
+      'Customized Support'
+    ]
+  },
+  {
+    title: 'LEGAL',
+    links: [
+      {title: 'General Info', href: ''},
+      {title: 'Privacy Policy', href: '/policy'},
+      {title: 'Terms of Service', href: '/terms'}
+    ]
+  },
+  {
+    title: 'TALK TO US',
+    links: [
+      {title: 'Support@Assistivteq.com', href: 'mailto:support@assistivteq.com'},
+      {title: '+2349120026559', href: 'tel:+2349120026559'},
+      {title: 'Contact Us', href: '#contact'},
+      {title: 'Facebook', href: '/'},
+      {title: 'Instagram', href: '/'},
+      {title: 'LinkedIn', href: '/'}
     ]
   }
 ]
@@ -53,8 +97,8 @@ export const navLinks = [
 ]
 export const mainNavLinks = [
   {href: '/', key:'home', title:'Home'},
-  {href: '/about', key:'about', title:'About Us'},
-  {href: '#products', key:'products', title:'Products'},
+  {href: '#about', key:'about', title:'About Us'},
+  {href: '#product', key:'products', title:'Products'},
   {href: '/community', key:'community', title:'Community'},
   {href: '/blog', key:'Blog', title:'Blog'}
 ]

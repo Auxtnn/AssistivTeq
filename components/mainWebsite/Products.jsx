@@ -32,10 +32,14 @@ const Products = () => {
   };
 
   return (
-    <section className="flex flex-col md:flex-row pt-[2.5rem] md:pt-[5rem]">
+    <section
+      id="product"
+      className="flex flex-col md:flex-row pt-[2.5rem] md:pt-[5rem]"
+    >
       <div className="md:ml-[2.06rem] ">
         <Image
           src={icon3}
+          alt="icon"
           className="relative w-[1.5rem] h-[1.5rem] md:w-[12.56rem] md:h-[5.56rem]"
         />
       </div>

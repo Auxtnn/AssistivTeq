@@ -5,8 +5,8 @@ import AboutUs from '@/components/mainWebsite/AboutUs';
 import FeaturedProducts from '@/components/mainWebsite/FeaturedProducts';
 import Testimonial from '@/components/mainWebsite/Testimonial';
 import Partnership from '@/components/mainWebsite/Partnership';
-
-
+import CTApartner from '@/components/mainWebsite/CTApartner';
+import Footer from '@/components/mainWebsite/Footer';
 
 function page() {
   return (
@@ -17,6 +17,8 @@ function page() {
       <FeaturedProducts />
       <Testimonial />
       <Partnership />
+      <CTApartner />
+      <Footer />
     </main>
   )
 }

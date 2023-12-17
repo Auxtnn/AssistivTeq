@@ -24,18 +24,21 @@ const AboutUs = () => {
     );
   };
   return (
-    <section className="">
+    <section id="about">
       {/* Who we are section */}
       <section className="flex justify-center  md:justify-evenly mt-[2.5rem] md:mt-[5rem] md:px-[4rem] md:gap-12 lg:gap-0 lg:px-0">
         <Image
           src={groupofpeople}
           alt="people with disabilities"
+          priority
+          quality={100}
           className="hidden lg:flex md:w-7/12 lg:w-[40%]"
         />
         <div className="px-4 md:px-0">
           <div className="">
             <Image
               src={icon3}
+              alt="icon"
               className=" lg:hidden relative w-[1.5rem] -ml-4 md:-ml-[4.2rem]  h-[1.5rem] md:w-[5.56rem] md:h-[5.56rem]"
             />
           </div>
@@ -62,9 +65,9 @@ const AboutUs = () => {
             individuals with disabilities, promoting independence,
             accessibility, and inclusivity.
           </article>
-          <button className="text-white hover:bg-white hover:text-primary hover:border-2 bg-primary w-full lg:w-[9.68rem] lg:h-[3.5rem] h-[2.25rem]  rounded-[1rem] flex items-center justify-center md:mt-0 font-[700]">
+          <a href='#contact' className="text-white hover:bg-white hover:text-primary hover:border-2 bg-primary w-full lg:w-[9.68rem] lg:h-[3.5rem] h-[2.25rem]  rounded-[1rem] flex items-center justify-center md:mt-0 font-[700]">
             Contact Us
-          </button>
+          </a>
         </div>
       </section>
       {/* What we can do for you */}
