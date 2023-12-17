@@ -72,7 +72,8 @@ export default function Home() {
   return (
     <main className="">
       <Image
-        src={vector} 
+        src={vector}
+        alt='vector' 
         className='absolute top-0 left-0'
       />
       <section id='header' className='mt-[2.5rem] lg:mt-[1.5rem] flex lg:justify-between lg:px-[7rem]'>

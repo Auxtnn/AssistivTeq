@@ -49,10 +49,7 @@ export default function Form({open,  handleClose}) {
               placeholder='Phone Number' 
               className='border-2 border-primary rounded-[12px] w-[100%] px-[1.5rem] py-[.75rem]'
             />
-            <input 
-              placeholder='Disability Type' 
-              className='border-2 border-primary rounded-[12px] w-[100%] px-[1.5rem] py-[.75rem]'
-            />
+            
           </form>
         </Box>
       </Modal>

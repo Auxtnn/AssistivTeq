@@ -5,7 +5,7 @@ import Nav from '@/components/mainWebsite/Nav'
 
 export const metadata = {
   title: 'AssistivTeq',
-  description: '...Redefining Technologies',
+  description: '...Redefining Technologies: Tech for empowerment: building inclusive futures. Your journey to independence starts here',
 }
 
 export default function RootLayout({ children }) {

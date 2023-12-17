@@ -9,7 +9,7 @@ const Nav = () => {
 
   
   return (
-    <nav className="px-[1.16rem] pt-[.7rem] md:pt-[1.5rem] md:pl-[7rem] justify-between items-center flex md:pr-[5.7rem] border-b-2 pb-4">
+    <nav className="bg-white sticky top-0 z-20 px-[1.16rem] pt-[.7rem] md:pt-[1.5rem] md:pl-[7rem] justify-between items-center flex md:pr-[5.7rem] border-b-2 pb-4">
       {/* logo */}
       <div className="text-primary font-[700] text-[1rem] md:text-[2rem]">
         LOGO

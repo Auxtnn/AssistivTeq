@@ -3,6 +3,7 @@ import { icon3 } from "@/public/images";
 import Image from "next/image";
 import React, { useState } from "react";
 import { image_john, john } from "@/public/images";
+import AnimatedSection from "./Animation";
 
 const Testimonial = () => {
   // Testimonials
@@ -101,25 +102,27 @@ const Testimonial = () => {
   };
 
   return (
-    <section className="mt-[2.5rem] md:mt-[5rem]">
-      <div className="">
+    <AnimatedSection>
+      <section className="mt-[2.5rem] md:mt-[5rem]">
         <div className="">
-          <Image
-            src={icon3}
-            alt="icon"
-            className="relative lg:absolute lg:left-0 lg:-mt-[4rem] w-[1.5rem]  lg:ml-0 h-[1.5rem] md:w-[5.56rem] md:h-[5.56rem]"
-          />
+          <div className="">
+            <Image
+              src={icon3}
+              alt="icon"
+              className="relative lg:absolute lg:left-0 lg:-mt-[4rem] w-[1.5rem]  lg:ml-0 h-[1.5rem] md:w-[5.56rem] md:h-[5.56rem]"
+            />
+          </div>
+          <h1 className="text-heading text-lg md:text-[2rem] tracking-wider font-bold mb-[.75rem] ml-4  lg:ml-20">
+            What Our Customers Say
+          </h1>
         </div>
-        <h1 className="text-heading text-lg md:text-[2rem] tracking-wider font-bold mb-[.75rem] ml-4  lg:ml-20">
-          What Our Customers Say
-        </h1>
-      </div>
-      {/* Testimonial Section */}
-      <div className="flex items-center justify-around">
-        {renderTestimonials()}
-      </div>
-      <div className="flex justify-center my-12 ">{renderDots()}</div>
-    </section>
+        {/* Testimonial Section */}
+        <div className="flex items-center justify-around">
+          {renderTestimonials()}
+        </div>
+        <div className="flex justify-center my-12 ">{renderDots()}</div>
+      </section>
+    </AnimatedSection>
   );
 };
 

@@ -1,28 +1,28 @@
 "use client";
 
 import * as React from "react";
-import PropTypes from "prop-types";
-import { styled, css } from "@mui/system";
-import { Modal as BaseModal } from "@mui/base/Modal";
-import Fade from "@mui/material/Fade";
-import { Button } from "@mui/base/Button";
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
 import { useState } from "react";
 
 const CTApartner = () => {
+  const [email, setEmail] = useState("");
+  const [fullname, setFullname] = useState("");
+  const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const [buttonText, setButtonText] = useState("Send Message");
+
+  // success or failure messages
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showFailureMessage, setShowFailureMessage] = useState(false);
+
   function TransitionsModal() {
     const [open, setOpen] = useState(false);
-    const [email, setEmail] = useState("");
-    const [fullname, setFullname] = useState("");
-    const [message, setMessage] = useState("");
+
     //   Form validation
-    const [errors, setErrors] = useState({});
 
     //   button text on form submission
-    const [buttonText, setButtonText] = useState("Send Message");
-
-    // success or failure messages
-    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-    const [showFailureMessage, setShowFailureMessage] = useState(false);
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -104,79 +104,56 @@ const CTApartner = () => {
     };
     return (
       <div>
-        <TriggerButton
+        <button
           onClick={handleOpen}
-          className="bg-primary text-white hover:bg-white hover:text-primary hover:border-2 font-bold"
+          className="w-max h-max py-3 px-8 bg-primary text-white hover:bg-white hover:text-primary hover:border-2 font-bold rounded-xl"
         >
           Contact Us
-        </TriggerButton>
-        <Modal
-          aria-labelledby="transition-modal-title"
-          aria-describedby="transition-modal-description"
-          open={open}
-          onClose={handleClose}
-          closeAfterTransition
-          slots={{ backdrop: StyledBackdrop }}
-        >
-          <Fade in={open}>
-            <ModalContent sx={style}>
-              <h1 className="mb-4 text-primary text-center font-700 text-xl md:text-[2rem]">
-                Reach out to us
-              </h1>
-              <form onSubmit={handleSubmit} className="flex flex-col gap-3 ">
+        </button>
+        <div>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <h1 className="mb-4 text-primary">We'd Love to hear from you </h1>
+              <form
+                method="POST"
+                onSubmit={handleSubmit}
+                className="flex flex-col gap-3"
+              >
                 <input
-                  type="text"
-                  name="fullname"
-                  value={fullname}
-                  onChange={(e) => {
-                    setFullname(e.target.value);
-                  }}
-                  placeholder="Enter Your Name"
-                  className={`border-2 border-primary rounded-[12px] w-[100%] px-[1.5rem] py-[.75rem] ${
-                    errors.fullname ? "border-red-500" : ""
-                  } py-3 text-base shadow-one outline-none focus:border-deep-red focus-visible:shadow-none`}
+                  placeholder="Full Name"
+                  onChange={(e) => setFullname(e.target.value)}
+                  className="border-2 border-primary rounded-[12px] w-[100%] px-[1.5rem] py-[.75rem]"
                 />
                 {errors.fullname && (
                   <p className="text-red-500 text-sm ">
                     Please enter your name.
                   </p>
                 )}
-
                 <input
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                  placeholder="Enter Your Email"
-                  className={`border-2 border-primary rounded-[12px] w-[100%] px-[1.5rem] py-[.75rem] ${
-                    errors.email ? "border-red-500" : ""
-                  } py-3 text-base shadow-one outline-none focus:border-deep-red focus-visible:shadow-none`}
+                  placeholder="Email Address"
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="border-2 border-primary rounded-[12px] w-[100%] px-[1.5rem] py-[.75rem]"
                 />
                 {errors.email && (
                   <p className="text-red-500 text-sm">
                     Please enter a valid email.
                   </p>
                 )}
-
                 <textarea
-                  name="message"
-                  value={message}
-                  onChange={(e) => {
-                    setMessage(e.target.value);
-                  }}
-                  placeholder="Write Your Message"
-                  className={`border-2 border-primary rounded-[12px] w-[100%] px-[1.5rem] py-[.75rem]  ${
-                    errors.message ? "border-red-500" : ""
-                  } py-3 text-base shadow-one outline-none focus:border-deep-red focus-visible:shadow-none`}
-                ></textarea>
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Enter Message"
+                  className="border-2 border-primary rounded-[12px] w-[100%] px-[1.5rem] py-[.75rem]"
+                />
                 {errors.message && (
                   <p className="text-red-500 text-sm">
                     Please enter your message.
                   </p>
                 )}
-
                 {showSuccessMessage && (
                   <p className="text-green-500 text-sm">
                     Message sent successfully!
@@ -187,73 +164,20 @@ const CTApartner = () => {
                     Failed to send message. Please try again.
                   </p>
                 )}
-
                 <button
                   type="submit"
-                  className="mt-2 h-12 px-8 bg-primary text-white hover:text-white hover:bg-deep-red hover:border-deep-red border font-bold rounded-md focus:outline-none"
                   disabled={buttonText === "Sending..."} // Disable button when sending
+                  className="w-max h-max py-3 px-8 bg-primary text-white font-bold rounded-[.75rem]"
                 >
                   {buttonText}
                 </button>
               </form>
-            </ModalContent>
-          </Fade>
-        </Modal>
+            </Box>
+          </Modal>
+        </div>
       </div>
     );
   }
-
-  const Backdrop = React.forwardRef((props, ref) => {
-    const { open, ...other } = props;
-    return (
-      <Fade in={open}>
-        <div ref={ref} {...other} />
-      </Fade>
-    );
-  });
-
-  Backdrop.propTypes = {
-    open: PropTypes.bool,
-  };
-
-  const blue = {
-    200: "#99CCFF",
-    300: "#66B2FF",
-    400: "#3399FF",
-    500: "#007FFF",
-    600: "#0072E5",
-    700: "#0066CC",
-  };
-
-  const grey = {
-    50: "#F3F6F9",
-    100: "#E5EAF2",
-    200: "#DAE2ED",
-    300: "#C7D0DD",
-    400: "#B0B8C4",
-    500: "#9DA8B7",
-    600: "#6B7A90",
-    700: "#434D5B",
-    800: "#303740",
-    900: "#1C2025",
-  };
-
-  const Modal = styled(BaseModal)`
-    position: fixed;
-    z-index: 1300;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  `;
-
-  const StyledBackdrop = styled(Backdrop)`
-    z-index: -1;
-    position: fixed;
-    inset: 0;
-    background-color: rgb(0 0 0 / 0.5);
-    -webkit-tap-highlight-color: transparent;
-  `;
 
   const style = {
     position: "absolute",
@@ -261,77 +185,13 @@ const CTApartner = () => {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 400,
+    bgcolor: "background.paper",
     border: "2px solid #66328E",
     boxShadow: 24,
+    p: 4,
+    borderRadius: 4,
   };
 
-  const ModalContent = styled("div")(
-    ({ theme }) => css`
-      font-family: "Poppins", sans-serif;
-      font-weight: 700;
-      text-align: start;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      overflow: hidden;
-      background-color: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
-      border-radius: 8px;
-      border: 1px solid ${theme.palette.mode === "dark" ? grey[700] : grey[200]};
-      box-shadow: 0 4px 12px
-        ${theme.palette.mode === "dark"
-          ? "rgb(0 0 0 / 0.5)"
-          : "rgb(0 0 0 / 0.2)"};
-      padding: 24px;
-      color: ${theme.palette.mode === "dark" ? grey[50] : grey[900]};
-
-      & .modal-title {
-        margin: 0;
-        line-height: 1.5rem;
-        margin-bottom: 8px;
-      }
-
-      & .modal-description {
-        margin: 0;
-        line-height: 1.5rem;
-        font-weight: 400;
-        color: ${theme.palette.mode === "dark" ? grey[400] : grey[800]};
-        margin-bottom: 4px;
-      }
-    `
-  );
-
-  const TriggerButton = styled(Button)(
-    ({ theme }) => css`
-      font-family: "IBM Plex Sans", sans-serif;
-      font-weight: 600;
-      font-size: 0.875rem;
-      line-height: 1.5;
-      padding: 8px 16px;
-      border-radius: 8px;
-      transition: all 150ms ease;
-      cursor: pointer;
-      background: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
-      border: 1px solid ${theme.palette.mode === "dark" ? grey[700] : grey[200]};
-      color: ${theme.palette.mode === "dark" ? grey[200] : grey[900]};
-      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-
-      &:hover {
-        background: ${theme.palette.mode === "dark" ? grey[800] : grey[50]};
-        border-color: ${theme.palette.mode === "dark" ? grey[600] : grey[300]};
-      }
-
-      &:active {
-        background: ${theme.palette.mode === "dark" ? grey[700] : grey[100]};
-      }
-
-      &:focus-visible {
-        box-shadow: 0 0 0 4px
-          ${theme.palette.mode === "dark" ? blue[300] : blue[200]};
-        outline: none;
-      }
-    `
-  );
   return (
     <section
       id="contact"
