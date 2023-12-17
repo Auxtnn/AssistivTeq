@@ -23,7 +23,6 @@ const CTApartner = () => {
     //   Form validation
 
     //   button text on form submission
-
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -126,6 +125,7 @@ const CTApartner = () => {
               >
                 <input
                   placeholder="Full Name"
+                  value={fullname}
                   onChange={(e) => setFullname(e.target.value)}
                   className="border-2 border-primary rounded-[12px] w-[100%] px-[1.5rem] py-[.75rem]"
                 />
@@ -135,6 +135,7 @@ const CTApartner = () => {
                   </p>
                 )}
                 <input
+                  value={email}
                   placeholder="Email Address"
                   onChange={(e) => setEmail(e.target.value)}
                   className="border-2 border-primary rounded-[12px] w-[100%] px-[1.5rem] py-[.75rem]"
@@ -145,6 +146,7 @@ const CTApartner = () => {
                   </p>
                 )}
                 <textarea
+                  value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Enter Message"
                   className="border-2 border-primary rounded-[12px] w-[100%] px-[1.5rem] py-[.75rem]"
