@@ -72,8 +72,9 @@ const AboutUs = () => {
         <div className="px-4 lg:w-6/12 lg:ml-[5rem]">
           <div className="">
             <Image
+              alt="icon"
               src={icon3}
-              className="relative lg:absolute lg:left-0 lg:-mt-[4rem] w-[1.5rem] -ml-4 md:-ml-[4.2rem] lg:ml-0 h-[1.5rem] md:w-[5.56rem] md:h-[5.56rem]"
+              className="relative lg:absolute lg:left-0 lg:-mt-[4rem] w-[1.5rem] -ml-4 lg:ml-0 h-[1.5rem] md:w-[5.56rem] md:h-[5.56rem]"
             />
           </div>
           <h1 className="text-heading text-lg md:text-[2rem] tracking-wider font-bold mb-[.75rem] ">

@@ -26,6 +26,10 @@ import groupofpeople from './groupOfPeople.png'
 import wheelchair1 from './wheelchair1.png'
 import wheelchair2 from './wheelchair2.png'
 import wheelchair3 from './wheelchair3.png'
+import image_john from './image_john.png'
+import partners from './partners.png'
+
+
 export {
   education,
   headerImage,
@@ -54,5 +58,7 @@ export {
   groupofpeople,
   wheelchair1,
   wheelchair2,
-  wheelchair3
+  wheelchair3,
+  image_john,
+  partners
 }
