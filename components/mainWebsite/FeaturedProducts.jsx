@@ -83,25 +83,13 @@ const FeaturedProducts = () => {
             </Tabs>
           </Box>
           <CustomTabPanel value={value} index={0}>
-            {mobilityDevices.map((items) => {
-              return (
-                <div key={items.key}>
-                  <Image
-                    src={items.imageSrc}
-                    alt="Product Image"
-                    width={300}
-                    height={140}
-                    className="relative w-auto h-auto"
-                  />
-                </div>
-              );
-            })}
+            Coming Soon...
           </CustomTabPanel>
           <CustomTabPanel value={value} index={1}>
             Coming Soon...
           </CustomTabPanel>
           <CustomTabPanel value={value} index={2}>
-            {mobilityDevices.map((items) => {
+            {/* {mobilityDevices.map((items) => {
               return (
                 <div key={items.key}>
                   <Image
@@ -113,7 +101,8 @@ const FeaturedProducts = () => {
                   />
                 </div>
               );
-            })}
+            })} */}
+            Coming Soon...
           </CustomTabPanel>
           <CustomTabPanel value={value} index={3}>
             Coming Soon...
@@ -153,25 +142,13 @@ const FeaturedProducts = () => {
             </Tabs>
           </Box>
           <CustomTabPanel value={value} index={0}>
-            {mobilityDevices.map((items) => {
-              return (
-                <div key={items.key}>
-                  <Image
-                    src={items.imageSrc}
-                    alt="Product Image"
-                    width={300}
-                    height={140}
-                    className="relative w-auto h-auto"
-                  />
-                </div>
-              );
-            })}
+            Coming Soon...
           </CustomTabPanel>
           <CustomTabPanel value={value} index={1}>
             Coming Soon...
           </CustomTabPanel>
           <CustomTabPanel value={value} index={2}>
-            {mobilityDevices.map((items) => {
+            {/* {mobilityDevices.map((items) => {
               return (
                 <div key={items.key}>
                   <Image
@@ -183,7 +160,8 @@ const FeaturedProducts = () => {
                   />
                 </div>
               );
-            })}
+            })} */}
+            Coming Soon...
           </CustomTabPanel>
           <CustomTabPanel value={value} index={3}>
             Coming Soon...

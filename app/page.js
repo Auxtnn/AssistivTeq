@@ -3,6 +3,10 @@ import Hero from '@/components/mainWebsite/Hero';
 import Products from '@/components/mainWebsite/Products';
 import AboutUs from '@/components/mainWebsite/AboutUs';
 import FeaturedProducts from '@/components/mainWebsite/FeaturedProducts';
+import Testimonial from '@/components/mainWebsite/Testimonial';
+
+
+
 
 function page() {
   return (
@@ -11,6 +15,7 @@ function page() {
       <Products />
       <AboutUs />
       <FeaturedProducts />
+      <Testimonial />
     </main>
   )
 }
