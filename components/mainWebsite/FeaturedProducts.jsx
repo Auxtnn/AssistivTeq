@@ -5,6 +5,8 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import { mobilityDevices } from "@/constant";
+import Image from "next/image";
 
 const FeaturedProducts = () => {
   function CustomTabPanel(props) {
@@ -20,7 +22,9 @@ const FeaturedProducts = () => {
       >
         {value === index && (
           <Box sx={{ p: 3 }}>
-            <Typography>{children}</Typography>
+            <div className="flex flex-row flex-wrap gap-4 items-center lg:justify-evenly lg:px-[3rem]">
+              {children}
+            </div>
           </Box>
         )}
       </div>
@@ -63,7 +67,7 @@ const FeaturedProducts = () => {
               variant="scrollable"
               scrollButtons="auto"
               aria-label="basic tabs example"
-              textColor="#252128"
+              textColor="secondary"
               indicatorColor="secondary"
               sx={{
                 fontSize: "1rem",
@@ -79,22 +83,46 @@ const FeaturedProducts = () => {
             </Tabs>
           </Box>
           <CustomTabPanel value={value} index={0}>
-            Item One
+            {mobilityDevices.map((items) => {
+              return (
+                <div key={items.key}>
+                  <Image
+                    src={items.imageSrc}
+                    alt="Product Image"
+                    width={300}
+                    height={140}
+                    className="relative w-auto h-auto"
+                  />
+                </div>
+              );
+            })}
           </CustomTabPanel>
           <CustomTabPanel value={value} index={1}>
-            Item Two
+            Coming Soon...
           </CustomTabPanel>
           <CustomTabPanel value={value} index={2}>
-            Item Three
+            {mobilityDevices.map((items) => {
+              return (
+                <div key={items.key}>
+                  <Image
+                    src={items.imageSrc}
+                    alt="Product Image"
+                    width={300}
+                    height={140}
+                    className="relative w-auto h-auto"
+                  />
+                </div>
+              );
+            })}
           </CustomTabPanel>
           <CustomTabPanel value={value} index={3}>
-            Item Four
+            Coming Soon...
           </CustomTabPanel>
           <CustomTabPanel value={value} index={4}>
-            Item Five
+            Coming Soon...
           </CustomTabPanel>
           <CustomTabPanel value={value} index={5}>
-            Item Six
+            Coming Soon...
           </CustomTabPanel>
         </Box>
       </div>
@@ -109,7 +137,7 @@ const FeaturedProducts = () => {
               onChange={handleChange}
               centered
               aria-label="basic tabs example"
-              textColor="#252128"
+              textColor="secondary"
               indicatorColor="secondary"
               sx={{
                 fontSize: "1rem",
@@ -125,22 +153,46 @@ const FeaturedProducts = () => {
             </Tabs>
           </Box>
           <CustomTabPanel value={value} index={0}>
-            Item One
+            {mobilityDevices.map((items) => {
+              return (
+                <div key={items.key}>
+                  <Image
+                    src={items.imageSrc}
+                    alt="Product Image"
+                    width={300}
+                    height={140}
+                    className="relative w-auto h-auto"
+                  />
+                </div>
+              );
+            })}
           </CustomTabPanel>
           <CustomTabPanel value={value} index={1}>
-            Item Two
+            Coming Soon...
           </CustomTabPanel>
           <CustomTabPanel value={value} index={2}>
-            Item Three
+            {mobilityDevices.map((items) => {
+              return (
+                <div key={items.key}>
+                  <Image
+                    src={items.imageSrc}
+                    alt="Product Image"
+                    width={300}
+                    height={140}
+                    className="relative w-auto h-auto"
+                  />
+                </div>
+              );
+            })}
           </CustomTabPanel>
           <CustomTabPanel value={value} index={3}>
-            Item Four
+            Coming Soon...
           </CustomTabPanel>
           <CustomTabPanel value={value} index={4}>
-            Item Five
+            Coming Soon...
           </CustomTabPanel>
           <CustomTabPanel value={value} index={5}>
-            Item Six
+            Coming Soon...
           </CustomTabPanel>
         </Box>
       </div>

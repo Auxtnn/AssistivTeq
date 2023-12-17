@@ -23,6 +23,9 @@ import Group from './Group.png'
 import onWheelChair from './onWheelChair.png'
 import icon3 from './icon3.png'
 import groupofpeople from './groupOfPeople.png'
+import wheelchair1 from './wheelchair1.png'
+import wheelchair2 from './wheelchair2.png'
+import wheelchair3 from './wheelchair3.png'
 export {
   education,
   headerImage,
@@ -48,5 +51,8 @@ export {
   Group,
   onWheelChair,
   icon3,
-  groupofpeople
+  groupofpeople,
+  wheelchair1,
+  wheelchair2,
+  wheelchair3
 }

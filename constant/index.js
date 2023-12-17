@@ -1,3 +1,5 @@
+import { wheelchair1, wheelchair2, wheelchair3 } from "@/public/images"
+
 export const footerLinks = [
   {
     title: 'NAVIGATION',
@@ -55,4 +57,12 @@ export const mainNavLinks = [
   {href: '#products', key:'products', title:'Products'},
   {href: '/community', key:'community', title:'Community'},
   {href: '/blog', key:'Blog', title:'Blog'}
+]
+
+export const mobilityDevices = [
+  {key: 'vision1', imageSrc: '/images/wheelchair1.png'},
+  {key: 'vision2', imageSrc: '/images/wheelchair2.png'},
+  {key: 'vision3', imageSrc: '/images/wheelchair3.png'},
+  {key: 'vision4', imageSrc: '/images/wheelchair1.png'},
+  {key: 'vision5', imageSrc: '/images/wheelchair1.png'},
 ]
