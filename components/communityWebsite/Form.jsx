@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -18,6 +20,8 @@ const style = {
 };
 
 export default function Form({open,  handleClose}) {
+
+  const [fullname, setFullname] = React.useState('')
   return (
     <div>
       <Modal
@@ -33,6 +37,8 @@ export default function Form({open,  handleClose}) {
           <form className='flex flex-col gap-3'>
             <input 
               placeholder='Full Name' 
+              // value={fullname}
+              onChange={e => setFullname(e)}
               className='border-2 border-primary rounded-[12px] w-[100%] px-[1.5rem] py-[.75rem]'
             />
             <input 

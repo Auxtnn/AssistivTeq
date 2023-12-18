@@ -20,6 +20,15 @@ import vector from './vector.png'
 import serviceHero from './serviceHero.png'
 import mobileHeader from './service_header_m.png'
 import Group from './Group.png'
+import onWheelChair from './onWheelChair.png'
+import icon3 from './icon3.png'
+import groupofpeople from './groupOfPeople.png'
+import wheelchair1 from './wheelchair1.png'
+import wheelchair2 from './wheelchair2.png'
+import wheelchair3 from './wheelchair3.png'
+import image_john from './image_john.png'
+import partners from './partners.png'
+
 
 export {
   education,
@@ -43,5 +52,13 @@ export {
   vector,
   serviceHero,
   mobileHeader,
-  Group
+  Group,
+  onWheelChair,
+  icon3,
+  groupofpeople,
+  wheelchair1,
+  wheelchair2,
+  wheelchair3,
+  image_john,
+  partners
 }

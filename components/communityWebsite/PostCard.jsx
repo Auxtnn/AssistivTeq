@@ -5,7 +5,10 @@ import Link from "next/link";
 
 
 
-const BlogPostCard = ( {post} ) => {
+const PostCard = (props) => {
+  console.log(props.post)
+const post = props.data;
+const slug = post.slug.current;
     return (
         <div className=" bg-white flex w-full flex-col mx-auto rounded-2xl">
                      
@@ -19,7 +22,7 @@ const BlogPostCard = ( {post} ) => {
         />
        
         <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-5">
-          {post.category} - {post.date}
+          {post.category} - {new Date(post.publishedAt).toDateString()}
         </div>
         <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-2.5">
           POSTED BY {post.author.name}
@@ -67,4 +70,4 @@ const BlogPostCard = ( {post} ) => {
     )
 }
 
-export default BlogPostCard;
+export default PostCard;

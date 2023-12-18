@@ -1,12 +1,12 @@
 
 import React from "react";
-
-import Blog from "@/components/mainWebsite/Blog";
-import Footer from "@/components/mainWebsite/Footer";
+import Blog from "@/components/communityWebsite/Blog";
+import Footer from "@/components/communityWebsite/Footer";
 
 const blog = () => {
 	return(
 		<div>
+    
 			<Blog />
 			<Footer />
 		</div>

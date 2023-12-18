@@ -22,6 +22,7 @@ module.exports = {
       },
       boxShadow: {
         card: '1px 3px 2px 2px rgba(37, 33, 40, 0.25);',
+        pCard: '2px 0px 30px 0px rgba(110, 117, 136, 0.08);'
       },
     },
   },

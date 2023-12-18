@@ -14,7 +14,10 @@ const Footer = () => {
           <a className="w-[7.75rem] h-[3.5rem] flex items-center justify-center bg-primary text-white rounded-[0.5rem] border-2 border-white font-[700]">
             Donate
           </a>
-          <a className="w-[7.75rem] h-[3.5rem] flex items-center justify-center bg-white text-primary rounded-[0.5rem] font-[700]">
+          <a
+            href="#header"
+            className="w-[7.75rem] h-[3.5rem] flex items-center justify-center bg-white text-primary rounded-[0.5rem] font-[700]"
+          >
             Join Us
           </a>
         </div>
@@ -27,17 +30,32 @@ const Footer = () => {
                 {section.title}
               </h1>
               <ul className="flex flex-col gap-[.75rem]">
-                {section.links.map((links, key) => {
-                  return (
-                    <li key={key}>
-                      <a
-                        className="text-white opacity-[.79] text-[.75rem]"
-                        href=""
-                      >
-                        {links}
-                      </a>
-                    </li>
-                  );
+                {section.links.map((link, key) => {
+                  if (typeof link === "object" && "title" in link) {
+                    // For title links
+                    return (
+                      <li key={key}>
+                        <a
+                          href={link.href}
+                          className="text-white opacity-[.79] text-[.75rem] hover:opacity-10"
+                        >
+                          {link.title}
+                        </a>
+                      </li>
+                    );
+                  } else {
+                    // For non-title links
+                    return (
+                      <li key={key}>
+                        <p
+                          className="text-white opacity-[.79] text-[.75rem]"
+                          href=""
+                        >
+                          {link}
+                        </p>
+                      </li>
+                    );
+                  }
                 })}
               </ul>
             </div>
@@ -60,7 +78,7 @@ const Footer = () => {
             </div>
             <div>
               <p className="text-[.625rem] leading-[1.875rem] text-white">
-                © 2023 AdaptiveTechHub Media. All Rights Reserved.
+                © 2023 AssistivTeq Media. All Rights Reserved.
               </p>
             </div>
           </div>

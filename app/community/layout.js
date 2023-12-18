@@ -1,11 +1,11 @@
 import { Inter } from 'next/font/google'
-import './globals.css'
-import Nav from '@/components/mainWebsite/Nav'
+import '../globals.css'
+import Nav from '@/components/communityWebsite/Nav'
 
 
 export const metadata = {
-  title: 'AssistivTeq',
-  description: '...Redefining Technologies: Tech for empowerment: building inclusive futures. Your journey to independence starts here',
+  title: 'AssistivTeq Community',
+  description: '...Breaking Barriers',
 }
 
 export default function RootLayout({ children }) {

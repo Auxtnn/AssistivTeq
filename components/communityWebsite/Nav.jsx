@@ -3,20 +3,31 @@ import React, { useState } from "react";
 import { navLinks } from "@/constant";
 import Form from "./Form";
 import { HiMenuAlt1, HiX } from "react-icons/hi";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormHelperText from "@mui/material/FormHelperText";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 const Nav = () => {
   const [toggle, setIsToggle] = useState(false);
 
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
-    setOpenModal(!openModal)
-    setOpen(!open)
+    setOpenModal(!openModal);
+    setOpen(!open);
   };
   const handleClose = () => {
-    setOpen(!open)
-    setOpenModal(!openModal)
+    setOpen(!open);
+    setOpenModal(!openModal);
+  };
+  const [form, setForm] = useState("");
+
+  const handleChange = (e) => {
+    setForm(e.target.value);
   };
 
   return (
@@ -43,7 +54,11 @@ const Nav = () => {
               {navLinks.map((items) => {
                 return (
                   <li key={items.key} className="flex flex-col gap-[3rem]">
-                    <a href={items.href} key={`${items.key} + 1`} className="text-white uppercase">
+                    <a
+                      href={items.href}
+                      key={`${items.key} + 1`}
+                      className="text-white uppercase"
+                    >
                       {items.title}
                     </a>
                   </li>
@@ -66,21 +81,39 @@ const Nav = () => {
         <div className="items-center justify-center">
           <ul className="flex  gap-[2.5rem] items-center  ">
             {navLinks.map((items) => {
-                return (
-                  <li key={items.key} className="flex flex-col gap-[3rem] flex-wrap">
-                    <a href={items.href} key={`${items.key} + 1`} className="text-heading text-[1rem] font-[600] tracking-[0.08rem] uppercase">
-                      {items.title}
-                    </a>
-                  </li>
-                );
-              })}
-            <a
-              href=""
-              className="text-heading text-[1rem] font-[600] tracking-[0.08rem] uppercase"
-            >
-              {" "}
-              Form
-            </a>
+              return (
+                <li
+                  key={items.key}
+                  className="flex flex-col gap-[3rem] flex-wrap"
+                >
+                  <a
+                    href={items.href}
+                    key={`${items.key} + 1`}
+                    className="text-heading text-[1rem] font-[600] tracking-[0.08rem] uppercase"
+                  >
+                    {items.title}
+                  </a>
+                </li>
+              );
+            })}
+
+            <FormControl className="border-primary" sx={{ minWidth: 120 }}>
+              <InputLabel className="text-heading text-[1rem] font-[600] tracking-[0.08rem] uppercase">
+                Form
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={form}
+                label="Form"
+                onChange={handleChange}
+              >
+                <MenuItem value="Volunteer">Volunteer</MenuItem>
+                <MenuItem value="Counsellor">Counsellor</MenuItem>
+                <MenuItem value="Partnership">Partnership</MenuItem>
+              </Select>
+            </FormControl>
+
             <button
               onClick={handleOpen}
               className="text-white bg-primary rounded-[1rem] px-[2rem] py-[.75rem] h-[3rem] uppercase"
@@ -92,13 +125,9 @@ const Nav = () => {
       </div>
       {openModal && (
         <div className="absolute right-[50%]">
-          <Form 
-            handleClose={handleClose}
-            open={open}
-          />
+          <Form handleClose={handleClose} open={open} />
         </div>
       )}
-      
     </nav>
   );
 };
