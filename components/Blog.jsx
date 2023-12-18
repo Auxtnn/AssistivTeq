@@ -1,19 +1,37 @@
-import React from "react" 
+"use client"
+
+import React, {useState, useEffect} from "react" 
 // import { IoIosArrowForward } from "react-icons/io";
 import { IoIosSearch } from "react-icons/io";
 import { FaHeart, FaShare } from "react-icons/fa";
 import Link from "next/link";
-import { gallery_1 } from "@/public/images";
 import Image from "next/image";
 import Newsletter from "./Newsletter";
-
-
+import BlogPostCard from './BlogPost';
+import { getPosts } from '../sanity/lib/client';
 
 const Blog = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    async function fetchPosts() {
+      try {
+        const sanityPosts = await getPosts();
+        console.log('Fetched posts:', sanityPosts); // Check the fetched posts in the console
+        setPosts(sanityPosts);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
+    }
+  
+    fetchPosts();
+  }, []);
+
+  console.log('Posts state:', posts);
+
     return (
 
-
-<section class="pt-10 bg-gray-50 sm:pt-16 lg:pt-14">
+<section className="pt-10 bg-gray-50 sm:pt-16 lg:pt-14">
 
     <div className="bg-zinc-100 flex flex-col">
       
@@ -90,63 +108,25 @@ const Blog = () => {
                   Recent Posts
                 </div>
                 <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider mt-5">
-                <Link href="">
-                  <span className="text-neutral-800">
-                    The Impact of Hearing Aids on Everyday Life: A User's
-                    Perspective
-                    <br />
-                    <br />
-                  </span>
-                  <span className="text-neutral-800 text-opacity-60">
-                    HEARING IMPAIRED - DEC 3, 2023
-                  </span>
-                 
-                
+                {posts.map((post) => (
+            <div key={post.slug.current}>
+              <Link href="">
+                <span className="text-neutral-800">
+                  {post.title}
+                  <br />
+                  <br />
+                </span>
               </Link>
-                </div>{" "}
-                <div className="bg-neutral-800 bg-opacity-10 shrink-0 h-px mt-4" />{" "}
-                <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider mt-6">
-                <Link href="">
-                  <span className="text-neutral-800">
-                    The Latest Innovations in Mobility Assistants: A
-                    Comprehensive Guide
-                    <br />
-                    <br />
-                  </span>
-                  <span className="text-neutral-800 text-opacity-60">
-                    HEARING IMPAIRED - DEC 3, 2023
-                  </span>
-                  </Link>
-                </div>{" "}
-                <div className="bg-neutral-800 bg-opacity-10 shrink-0 h-px mt-3.5" />{" "}
-                <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider mt-6">
-                <Link href="">
-                  <span className="text-neutral-800">
-                    The Role of Robotics in Assisting Daily Tasks for
-                    Individuals with Disabilities
-                    <br />
-                    <br />
-                  </span>
-                  <span className="text-neutral-800 text-opacity-60">
-                    HEARING IMPAIRED - DEC 3, 2023
-                  </span>
-                  </Link>
-                </div>{" "}
-
-                <div className="bg-neutral-800 bg-opacity-10 shrink-0 h-px mt-4" />{" "}
-                <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider mt-6">
-                <Link href="">
-                  <span className="text-neutral-800">
-                    Advocacy in Action: Promoting Inclusivity in the Assistive
-                    Tech Community
-                    <br />
-                    <br />
-                  </span>
-                  <span className="text-neutral-800 text-opacity-60">
-                    HEARING IMPAIRED - DEC 3, 2023
-                  </span>
-                  </Link>
-                </div>
+              <span className="text-neutral-800 text-opacity-60">
+                {post.category} - {post.author.name}
+              </span>
+            </div>
+          ))}
+              </div>{" "}
+               
+               
+               
+               
               </div>{" "}
 
               <div className="bg-white flex flex-col items-stretch mt-10 px-6 py-6 rounded-2xl max-md:px-3">
@@ -206,242 +186,22 @@ const Blog = () => {
             <div className="items-stretch flex flex-col max-md:max-w-full max-md:mt-5">
               <div className="max-md:max-w-full">
                 <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
-                  <div className="flex flex-col items-stretch w-5/12 max-md:w-full max-md:ml-0">
-                    <div className=" bg-white flex w-full flex-col mx-auto rounded-2xl">
-                     
-                      <Image
-                        loading="lazy"
-                        unoptimized
-                        src="/images/gallery_1.png"
-                        width={300}
-                        height={200}
-                        className="aspect-[1.34] object-cover object-center w-full overflow-hidden self-stretch"
-                      />
-                     
-                      <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-5">
-                        HEARING IMPAIRED - DEC 3, 2023
-                      </div>
-                      <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-2.5">
-                        POSTED BY JOHN DOE
-                      </div>
-                      <div className="text-neutral-800 text-[1rem] px-5 font-medium tracking-wider w-[331px] mt-1.5">
-                      <Link href=""> 
-                        The Impact of Hearing Aids on Everyday Life: A User's
-                        Perspective
-                        </Link>
-                      </div>{" "}
-                  
-                      <div className="text-neutral-800 px-5 text-opacity-80 text-[.85rem] tracking-wider mt-2">
-                        Hearing Beyond Sound: Personal Stories of Transformation
-                        and Connection
-                      </div>{" "}
-                      <div className="flex w-full justify-between gap-24 my-6">
-                        <div className="justify-center items-stretch flex gap-5">
-                          <div className="items-stretch flex justify-between gap-2 pl-5">
-                          <FaHeart className="text-xl text-primary" />
-                             {" "}
-                            <div className=" text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider grow whitespace-nowrap">
-                              36
-                            </div>
-                          </div>{" "}
-                          <div className="items-stretch flex justify-between gap-2">
-                          <FaShare className="text-xl text-primary" />
-                         
-                            {" "}
-                            <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider grow whitespace-nowrap">
-                              36
-                            </div>
-                            
-                          </div>
-                          
-                        </div>{" "}
-                      
-                        <div className="text-purple-900 text-[.85rem] font-bold tracking-wider self-stretch grow whitespace-nowrap">
-                        <Link href='#'>
-                          Read More
-                          </Link>
-                        </div>
-                       
-                       
-                      </div>
-                    
-                    </div>
-                  </div>{" "}
+                {posts.map((post) => (
+                <div key={post._id} className="flex flex-col items-stretch w-5/12 max-md:w-full max-md:ml-0">
+                <BlogPostCard post={post} />
+                </div>
+            ))}
 
-                  <div className="flex flex-col items-stretch w-5/12 max-md:w-full max-md:ml-0">
-                    <div className=" bg-white flex w-full flex-col mx-auto rounded-2xl">
-                      <Image
-                        loading="lazy"
-                        unoptimized
-                        src="/images/gallery_1.png"
-                        width={300}
-                        height={200}
-                        className="aspect-[1.34] object-cover object-center w-full overflow-hidden self-stretch"
-                      />
-                      
-                      <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-5">
-                        HEARING IMPAIRED - DEC 3, 2023
-                      </div>
-                      <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-2.5">
-                        POSTED BY JOHN DOE
-                      </div>
-                      <div className="text-neutral-800 text-[1rem] px-5 font-medium tracking-wider w-[331px] mt-1.5">
-                      <Link href=""> 
-                        The Impact of Hearing Aids on Everyday Life: A User's
-                        Perspective
-                        </Link>
-                      </div>{" "}
-                      <div className="text-neutral-800 px-5 text-opacity-80 text-[.85rem] tracking-wider mt-2">
-                        Hearing Beyond Sound: Personal Stories of Transformation
-                        and Connection
-                      </div>{" "}
-                      <div className="flex w-full justify-between gap-24 my-6">
-                        <div className="justify-center items-stretch flex gap-5">
-                          <div className="items-stretch flex justify-between gap-2 pl-5">
-                          <FaHeart className="text-xl text-primary" />
-                             {" "}
-                            <div className=" text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider grow whitespace-nowrap">
-                              36
-                            </div>
-                          </div>{" "}
-                          <div className="items-stretch flex justify-between gap-2">
-                          <FaShare className="text-xl text-primary" />
-                         
-                            {" "}
-                            <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider grow whitespace-nowrap">
-                              36
-                            </div>
-                          </div>
-                        </div>{" "}
-                      
-                        <div className="text-purple-900 text-[.85rem] font-bold tracking-wider self-stretch grow whitespace-nowrap">
-                        <Link href='#'>
-                          Read More
-                          </Link>
-                        </div>
-                       
-                       
-                      </div>
-                    </div>
-                  </div>{" "}
+               
 
                 </div>
               </div>
               <div className="mt-5 max-md:max-w-full">
                 <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
                 <div className="flex flex-col items-stretch w-5/12 max-md:w-full max-md:ml-0">
-                    <div className=" bg-white flex w-full flex-col mx-auto rounded-2xl">
-                      <Image
-                        loading="lazy"
-                        unoptimized
-                        src="/images/gallery_1.png"
-                        width={300}
-                        height={200}
-                        className="aspect-[1.34] object-cover object-center w-full overflow-hidden self-stretch"
-                      />
-                      
-                      <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-5">
-                        HEARING IMPAIRED - DEC 3, 2023
-                      </div>
-                      <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-2.5">
-                        POSTED BY JOHN DOE
-                      </div>
-                      <div className="text-neutral-800 text-[1rem] px-5 font-medium tracking-wider w-[331px] mt-1.5">
-                      <Link href=""> 
-                        The Impact of Hearing Aids on Everyday Life: A User's
-                        Perspective
-                        </Link>
-                      </div>{" "}
-                      <div className="text-neutral-800 px-5 text-opacity-80 text-[.85rem] tracking-wider mt-2">
-                        Hearing Beyond Sound: Personal Stories of Transformation
-                        and Connection
-                      </div>{" "}
-                      <div className="flex w-full justify-between gap-24 my-6">
-                        <div className="justify-center items-stretch flex gap-5">
-                          <div className="items-stretch flex justify-between gap-2 pl-5">
-                          <FaHeart className="text-xl text-primary" />
-                             {" "}
-                            <div className=" text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider grow whitespace-nowrap">
-                              36
-                            </div>
-                          </div>{" "}
-                          <div className="items-stretch flex justify-between gap-2">
-                          <FaShare className="text-xl text-primary" />
-                         
-                            {" "}
-                            <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider grow whitespace-nowrap">
-                              36
-                            </div>
-                          </div>
-                        </div>{" "}
-                      
-                        <div className="text-purple-900 text-[.85rem] font-bold tracking-wider self-stretch grow whitespace-nowrap">
-                        <Link href='#'>
-                          Read More
-                          </Link>
-                        </div>
-                       
-                       
-                      </div>
-                    </div>
+               
                   </div>{" "}
 
-                  <div className="flex flex-col items-stretch w-5/12 max-md:w-full max-md:ml-0">
-                    <div className=" bg-white flex w-full flex-col mx-auto rounded-2xl">
-                      <Image
-                        loading="lazy"
-                        unoptimized
-                        src="/images/gallery_1.png"
-                        width={300}
-                        height={200}
-                        className="aspect-[1.34] object-cover object-center w-full overflow-hidden self-stretch"
-                      />
-                      
-                      <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-5">
-                        HEARING IMPAIRED - DEC 3, 2023
-                      </div>
-                      <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-2.5">
-                        POSTED BY JOHN DOE
-                      </div>
-                      <div className="text-neutral-800 text-[1rem] px-5 font-medium tracking-wider w-[331px] mt-1.5">
-                      <Link href=""> 
-                        The Impact of Hearing Aids on Everyday Life: A User's
-                        Perspective
-                        </Link>
-                      </div>{" "}
-                      <div className="text-neutral-800 px-5 text-opacity-80 text-[.85rem] tracking-wider mt-2">
-                        Hearing Beyond Sound: Personal Stories of Transformation
-                        and Connection
-                      </div>{" "}
-                      <div className="flex w-full justify-between gap-24 my-6">
-                        <div className="justify-center items-stretch flex gap-5">
-                          <div className="items-stretch flex justify-between gap-2 pl-5">
-                          <FaHeart className="text-xl text-primary" />
-                             {" "}
-                            <div className=" text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider grow whitespace-nowrap">
-                              36
-                            </div>
-                          </div>{" "}
-                          <div className="items-stretch flex justify-between gap-2">
-                          <FaShare className="text-xl text-primary" />
-                         
-                            {" "}
-                            <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider grow whitespace-nowrap">
-                              36
-                            </div>
-                          </div>
-                        </div>{" "}
-                      
-                        <div className="text-purple-900 text-[.85rem] font-bold tracking-wider self-stretch grow whitespace-nowrap">
-                        <Link href='#'>
-                          Read More
-                          </Link>
-                        </div>
-                       
-                       
-                      </div>
-                    </div>
-                  </div>{" "}
                   
 
                 </div>
@@ -449,119 +209,10 @@ const Blog = () => {
               <div className="mt-5 max-md:max-w-full">
                 <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
                 <div className="flex flex-col items-stretch w-5/12 max-md:w-full max-md:ml-0">
-                    <div className=" bg-white flex w-full flex-col mx-auto rounded-2xl">
-                      <Image
-                        loading="lazy"
-                        unoptimized
-                        src="/images/gallery_1.png"
-                        width={300}
-                        height={200}
-                        className="aspect-[1.34] object-cover object-center w-full overflow-hidden self-stretch"
-                      />
-                      
-                      <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-5">
-                        HEARING IMPAIRED - DEC 3, 2023
-                      </div>
-                      <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-2.5">
-                        POSTED BY JOHN DOE
-                      </div>
-                      <div className="text-neutral-800 text-[1rem] px-5 font-medium tracking-wider w-[331px] mt-1.5">
-                      <Link href=""> 
-                        The Impact of Hearing Aids on Everyday Life: A User's
-                        Perspective
-                        </Link>
-                      </div>{" "}
-                      <div className="text-neutral-800 px-5 text-opacity-80 text-[.85rem] tracking-wider mt-2">
-                        Hearing Beyond Sound: Personal Stories of Transformation
-                        and Connection
-                      </div>{" "}
-                      <div className="flex w-full justify-between gap-24 my-6">
-                        <div className="justify-center items-stretch flex gap-5">
-                          <div className="items-stretch flex justify-between gap-2 pl-5">
-                          <FaHeart className="text-xl text-primary" />
-                             {" "}
-                            <div className=" text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider grow whitespace-nowrap">
-                              36
-                            </div>
-                          </div>{" "}
-                          <div className="items-stretch flex justify-between gap-2">
-                          <FaShare className="text-xl text-primary" />
-                         
-                            {" "}
-                            <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider grow whitespace-nowrap">
-                              36
-                            </div>
-                          </div>
-                        </div>{" "}
-                      
-                        <div className="text-purple-900 text-[.85rem] font-bold tracking-wider self-stretch grow whitespace-nowrap">
-                        <Link href='#'>
-                          Read More
-                          </Link>
-                        </div>
-                       
-                       
-                      </div>
-                    </div>
+                   
                   </div>{" "}
                   
-                  <div className="flex flex-col items-stretch w-5/12 max-md:w-full max-md:ml-0">
-                    <div className=" bg-white flex w-full flex-col mx-auto rounded-2xl">
-                      <Image
-                        loading="lazy"
-                        unoptimized
-                        src="/images/gallery_1.png"
-                        width={300}
-                        height={200}
-                        className="aspect-[1.34] object-cover object-center w-full overflow-hidden self-stretch"
-                      />
-                      
-                      <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-5">
-                        HEARING IMPAIRED - DEC 3, 2023
-                      </div>
-                      <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-2.5">
-                        POSTED BY JOHN DOE
-                      </div>
-                      <div className="text-neutral-800 text-[1rem] px-5 font-medium tracking-wider w-[331px] mt-1.5">
-                      <Link href=""> 
-                        The Impact of Hearing Aids on Everyday Life: A User's
-                        Perspective
-                        </Link>
-                      </div>{" "}
-                      <div className="text-neutral-800 px-5 text-opacity-80 text-[.85rem] tracking-wider mt-2">
-                        Hearing Beyond Sound: Personal Stories of Transformation
-                        and Connection
-                      </div>{" "}
-                      <div className="flex w-full justify-between gap-24 my-6">
-                        <div className="justify-center items-stretch flex gap-5">
-                          <div className="items-stretch flex justify-between gap-2 pl-5">
-                          <FaHeart className="text-xl text-primary" />
-                             {" "}
-                            <div className=" text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider grow whitespace-nowrap">
-                              36
-                            </div>
-                          </div>{" "}
-                          <div className="items-stretch flex justify-between gap-2">
-                          <FaShare className="text-xl text-primary" />
-                         
-                            {" "}
-                            <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider grow whitespace-nowrap">
-                              36
-                            </div>
-                          </div>
-                        </div>{" "}
-                      
-                        <div className="text-purple-900 text-[.85rem] font-bold tracking-wider self-stretch grow whitespace-nowrap">
-                        <Link href='#'>
-                          Read More
-                          </Link>
-                        </div>
-                       
-                       
-                      </div>
-                    </div>
-                  </div>{" "}
-
+                
                 </div>
               </div>
             </div>
@@ -593,6 +244,4 @@ const Blog = () => {
     )
 }
 
-export default Blog
-
-
+export default Blog;
