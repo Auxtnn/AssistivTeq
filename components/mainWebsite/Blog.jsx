@@ -279,7 +279,7 @@ const Blog = () => {
                       />
                       
                       <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-5">
-                        HEARING IMPAIRED - DEC 3, 2023
+                        HEARING IMPAIRED - DEC 3, 2024
                       </div>
                       <div className="text-neutral-800 text-opacity-60 text-[.85rem] font-medium tracking-wider px-5 whitespace-nowrap mt-2.5">
                         POSTED BY JOHN DOE
