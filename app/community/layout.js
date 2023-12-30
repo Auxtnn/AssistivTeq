@@ -8,13 +8,13 @@ export const metadata = {
   description: '...Breaking Barriers',
 }
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
   return (
-    <html lang="en">
-      <body >
+    // <html lang="en">
+      <section >
         <Nav />
         {children}
-      </body>
-    </html>
+      </section>
+    // </html>
   )
 }

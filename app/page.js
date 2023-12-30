@@ -7,10 +7,12 @@ import Testimonial from '@/components/mainWebsite/Testimonial';
 import Partnership from '@/components/mainWebsite/Partnership';
 import CTApartner from '@/components/mainWebsite/CTApartner';
 import Footer from '@/components/mainWebsite/Footer';
+import Nav from '@/components/mainWebsite/Nav';
 
 function page() {
   return (
     <main className=''>
+      <Nav />
       <Hero />
       <Products />
       <AboutUs />

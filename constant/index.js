@@ -34,7 +34,7 @@ export const footerLinks = [
   {
     title: 'TALK TO US',
     links: [
-      {title: 'Support@Assistivteq.com', href: 'mailto:support@assistivteq.com'},
+      {title: 'community@Assistivteq.com', href: 'mailto:community@assistivteq.com'},
       {title: '+2349120026559', href: 'tel:+2349120026559'},
       {title: 'Contact Us', href: '#contact'},
       {title: 'Facebook', href: '/'},
@@ -82,7 +82,7 @@ export const mainFooterLinks = [
       {title: '+2349120026559', href: 'tel:+2349120026559'},
       {title: 'Contact Us', href: '#contact'},
       {title: 'Facebook', href: '/'},
-      {title: 'Instagram', href: '/'},
+      {title: 'Instagram', href: 'https:www.instagram.com/assistivteq_'},
       {title: 'LinkedIn', href: '/'}
     ]
   }

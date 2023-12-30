@@ -64,7 +64,7 @@ const AboutUs = () => {
             alt="people with disabilities"
             className="flex lg:hidden my-[1.75rem] w-full  "
           />
-          <article className="text-heading opacity-80 text-xs md:text-[1rem] tracking-wider leading-[1.3rem] md:leading-[1.7rem] font-medium capitalize px-2 md:px-0  lg:w-[31.68rem] mb-[2.5rem]">
+          <article className="text-heading opacity-80 text-xs md:text-[1rem] tracking-wider leading-[1.3rem] md:leading-[1.7rem] font-medium capitalize px-2 md:px-0  lg:w-[31.68rem] mb-[2.5rem] text-justify">
             We are dedicated to revolutionizing the way individuals with diverse
             abilities experience the world. We believe in the transformative
             power of technology to break down barriers, foster independence, and
@@ -119,7 +119,7 @@ const AboutUs = () => {
             initial={{ opacity: 0 }}
             whileInView={[{ y: [-40, 0] }, { opacity: 1 }]}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="text-heading opacity-80 text-xs md:text-[1rem] tracking-wider leading-[1.3rem] md:leading-[1.7rem] font-medium capitalize   lg:w-[31.68rem] mb-[2.5rem]"
+            className="text-heading opacity-80 text-xs md:text-[1rem] tracking-wider leading-[1.3rem] md:leading-[1.7rem] font-medium capitalize text-justify lg:w-[31.68rem] mb-[2.5rem]"
           >
             With a passion for innovation and a commitment to excellence, we
             strive to redefine accessibility. Our range of products is

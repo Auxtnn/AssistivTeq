@@ -59,8 +59,8 @@ const MeetOurMembers = () => {
           <Image
             src={testimonies[activeTestimony].imageSrc}
             alt={testimonies[activeTestimony].name}
-            layout="fill"
-            objectFit="cover"
+            fill
+            // objectFit="cover"
           />
         </div>
         <h1 className="text-[1.125rem] md:text-[1.5rem] font-[600] tracking-wide text-white mt-4">
