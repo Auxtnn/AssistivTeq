@@ -9,6 +9,6 @@ export const transporter = nodemailer.createTransport({
 })
 
 export const mailOptions = {
-  from: 'CARDBALANCES',
+  from: 'AssistivTeq',
   to: process.env.CLIENT_EMAIL
 }

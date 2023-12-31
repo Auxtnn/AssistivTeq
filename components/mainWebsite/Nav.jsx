@@ -2,8 +2,9 @@
 import React, { useState } from "react";
 import { mainNavLinks } from "@/constant";
 import { HiMenuAlt1, HiX } from "react-icons/hi";
-
-
+import Image from "next/image";
+import { logo_on_white } from "@/public/images";
+import Link from "next/link";
 const Nav = () => {
   const [toggle, setIsToggle] = useState(false);
 
@@ -11,9 +12,14 @@ const Nav = () => {
   return (
     <nav className="bg-white sticky top-0 z-20 px-[1.16rem] pt-[.7rem] md:pt-[1.5rem] md:pl-[7rem] justify-between items-center flex md:pr-[5.7rem] border-b-2 pb-4">
       {/* logo */}
-      <div className="text-primary font-[700] text-[1rem] md:text-[2rem]">
-        LOGO
-      </div>
+      <Link href='/' className="">
+        <Image 
+        src={logo_on_white}
+        width={150}
+        height={150}
+        className="relative "
+        />
+      </Link>
       {/* navlinks */}
 
       {/* Mobile Nav */}

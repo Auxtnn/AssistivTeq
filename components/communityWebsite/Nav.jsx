@@ -15,7 +15,7 @@ const Nav = () => {
 
   const [openModal, setOpenModal] = useState(false);
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpenModal(!openModal);
     setOpen(!open);
@@ -31,7 +31,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="px-[1.16rem] pt-[.7rem] md:pt-[1.5rem] md:pl-[7rem] justify-between items-center flex md:pr-[5.7rem] border-b-2 pb-4">
+    <nav className=" sticky top-0 z-20 bg-white px-[1.16rem] pt-[.7rem] md:pt-[1.5rem] md:pl-[7rem] justify-between items-center flex md:pr-[5.7rem] border-b-2 pb-4">
       {/* logo */}
       <div className="text-primary font-[700] text-[1rem] md:text-[2rem]">
         LOGO
@@ -97,22 +97,9 @@ const Nav = () => {
               );
             })}
 
-            <FormControl className="border-primary" sx={{ minWidth: 120 }}>
-              <InputLabel className="text-heading text-[1rem] font-[600] tracking-[0.08rem] uppercase">
-                Form
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={form}
-                label="Form"
-                onChange={handleChange}
-              >
-                <MenuItem value="Volunteer">Volunteer</MenuItem>
-                <MenuItem value="Counsellor">Counsellor</MenuItem>
-                <MenuItem value="Partnership">Partnership</MenuItem>
-              </Select>
-            </FormControl>
+            <button className="text-heading text-[1rem] font-[600] tracking-[0.08rem] uppercase">
+              Form
+            </button>
 
             <button
               onClick={handleOpen}

@@ -1,4 +1,5 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
 import Image from "next/image";
 import { GoDotFill } from "react-icons/go";
 import { FiPhone } from "react-icons/fi";
@@ -6,14 +7,29 @@ import { FiPhone } from "react-icons/fi";
 import GalleryComponent from "@/components/communityWebsite/GalleryComponent";
 import { aboutHeader, aboutHero, group17, wheelChair } from "@/public/images";
 import Footer from "@/components/communityWebsite/Footer";
+import Form from "@/components/communityWebsite/Form";
+
 
 const about_us = () => {
+
+  const [openModal, setOpenModal] = useState(false);
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpenModal(!openModal);
+    setOpen(!open);
+  };
+  const handleClose = () => {
+    setOpen(!open);
+    setOpenModal(!openModal);
+  };
+
   return (
     <main className="">
       <div className="mt-4 ">
         <Image src={aboutHeader} alt="about header" className="relative" />
       </div>
-      <section className="flex gap-4 my-[2.5rem] md:px-[7.61rem]">
+      <section id="header" className="flex gap-4 my-[2.5rem] md:px-[7.61rem]">
         <article className="flex flex-col items-center md:items-start w-[100%] md:w-auto">
           <h3 className="text-primary font-[500] tracking-[0.02rem] text-[1rem] md:text-[1.5rem] text-center md:text-left mb-[12px]">
             About AssistivTeq Community
@@ -27,7 +43,7 @@ const about_us = () => {
             equality, and work tirelessly to create a more inclusive world where
             every person's unique abilities are recognized and celebrated.
           </p>
-          <a className=" shadow-card bg-primary w-[7.6875rem] md:w-[9.6875rem] h-[2.25rem] md:h-[3.5rem] flex items-center justify-center text-white font-[700] rounded-[0.5rem]">
+          <a href="#contact" className=" shadow-card bg-primary w-[7.6875rem] md:w-[9.6875rem] h-[2.25rem] md:h-[3.5rem] flex items-center justify-center text-white font-[700] rounded-[0.5rem]">
             Contact Us
           </a>
         </article>
@@ -189,7 +205,7 @@ const about_us = () => {
         <GalleryComponent />
       </section>
       {/* contact us */}
-      <section className="justify-center px-4 my-[2.5rem] ">
+      <section id="contact" className="justify-center px-4 my-[2.5rem] ">
         <div className="px-[1.1rem] py-[1.72rem] flex flex-col md:flex-row md:justify-around md:items-center gap-3 bg-[#FFFADE] rounded-[.75rem] lg:mx-[10.7rem]">
           <div className="flex gap-3 flex-col  items-start mt-3">
             <h3 className="text-[1rem] md:text-[1.5rem] font-[600] tracking-[0.04rem] md:tracking-[0.06rem] w-[19.243rem] md:w-auto">
@@ -199,18 +215,23 @@ const about_us = () => {
               <FiPhone className="" />
               <div className="flex flex-col md:flex-row gap-1">
                 <p className="text-heading text-[1rem] tracking-[0.04rem]">
-                  +2349065875857
+                  +2349037176588
                 </p>
                 <p className="text-heading text-[1rem] tracking-[0.04rem]">
-                  +2349065875857
+                  +2349049802906
                 </p>
               </div>
             </div>
           </div>
-          <a className=" shadow-card bg-primary w-[7.6875rem] md:w-[9.6875rem] h-[2.25rem] md:h-[3.5rem] flex items-center justify-center text-white font-[700] rounded-[0.5rem]">
+          <a onClick={handleOpen} className=" shadow-card bg-primary w-[7.6875rem] md:w-[9.6875rem] h-[2.25rem] md:h-[3.5rem] flex items-center justify-center text-white font-[700] rounded-[0.5rem]">
             Contact Us
           </a>
         </div>
+        {openModal && (
+        <div className="absolute right-[50%]">
+          <Form handleClose={handleClose} open={open} />
+        </div>
+      )}
       </section>
       {/* footer */}
       <Footer />

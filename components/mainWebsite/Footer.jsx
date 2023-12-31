@@ -2,6 +2,9 @@ import React from "react";
 import { mainFooterLinks } from "@/constant";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import Image from "next/image";
+import { Link } from "@mui/material";
+import { logo_on_white } from "@/public/images";
 
 const Footer = () => {
   return (
@@ -66,7 +69,14 @@ const Footer = () => {
         </div>
         {/* socials */}
         <div className="mt-[1.38rem] flex flex-col md:flex-row md:items-center md:justify-around gap-[1.06rem]">
-          <h1>LOGO</h1>
+          <Link href="/" className="">
+            <Image
+              src={logo_on_white}
+              width={150}
+              height={150}
+              className="relative "
+            />
+          </Link>
           <div className="flex flex-col md:flex-row-reverse md:items-center md:justify-between md:w-[50%] pb-4">
             <div className="flex gap-[.5rem] py-[1.06rem]">
               <a

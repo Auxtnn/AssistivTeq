@@ -28,7 +28,7 @@ import wheelchair2 from './wheelchair2.png'
 import wheelchair3 from './wheelchair3.png'
 import image_john from './image_john.png'
 import partners from './partners.png'
-
+import logo_on_white from './logo_on_white.png'
 
 export {
   education,
@@ -60,5 +60,6 @@ export {
   wheelchair2,
   wheelchair3,
   image_john,
-  partners
+  partners,
+  logo_on_white
 }

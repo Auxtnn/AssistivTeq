@@ -20,7 +20,7 @@ export async function POST(request) {
           Full Name: ${body.fullname} \n 
           Email:${body.email} \n 
           Message: ${body.message} \n 
-          This message was sent from Glidex Technologies website
+          This message was sent from AssistivTeq website
           `
       })
       return NextResponse.json({ message: "This Worked", success: true });
