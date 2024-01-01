@@ -55,7 +55,7 @@ const MeetOurMembers = () => {
         Meet Our Members
       </h1>
       <div className="flex flex-col items-center justify-center">
-        <div className="relative w-[200px] h-[200px] md:w-[300px] md:h-[300px] mb-4">
+        <div className="relative w-[200px] h-[200px] md:w-[300px] md:h-[300px] mb-4 rounded-[50%] overflow-hidden">
           <Image
             src={testimonies[activeTestimony].imageSrc}
             alt={testimonies[activeTestimony].name}
@@ -66,9 +66,9 @@ const MeetOurMembers = () => {
         <h1 className="text-[1.125rem] md:text-[1.5rem] font-[600] tracking-wide text-white mt-4">
           {testimonies[activeTestimony].name}
         </h1>
-        <h3 className="text-[1rem] font-[400] tracking-wide text-white text-center">
+        {/* <h3 className="text-[1rem] font-[400] tracking-wide text-white text-center">
           {testimonies[activeTestimony].role}
-        </h3>
+        </h3> */}
       </div>
       <p className="text-white font-normal text-[0.875rem] md:text-[1rem] text-center max-w-[20.7085rem] md:max-w-[33.36881rem] mt-4">
         {testimonies[activeTestimony].quote}

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { navLinks } from "@/constant";
 import Form from "./Form";
 import { HiMenuAlt1, HiX } from "react-icons/hi";
@@ -9,6 +9,9 @@ import MenuItem from "@mui/material/MenuItem";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import Link from "next/link";
+import { logo_on_white } from "@/public/images";
+import Image from "next/image";
 
 const Nav = () => {
   const [toggle, setIsToggle] = useState(false);
@@ -30,12 +33,36 @@ const Nav = () => {
     setForm(e.target.value);
   };
 
+  const closeMobileMenu = () => {
+    setIsToggle(false);
+  };
+
+  // Close the menu if clicked outside the menu
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (toggle && !e.target.closest(".mobile-menu")) {
+        closeMobileMenu();
+      }
+    };
+
+    document.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [toggle]);
+
   return (
     <nav className=" sticky top-0 z-20 bg-white px-[1.16rem] pt-[.7rem] md:pt-[1.5rem] md:pl-[7rem] justify-between items-center flex md:pr-[5.7rem] border-b-2 pb-4">
       {/* logo */}
-      <div className="text-primary font-[700] text-[1rem] md:text-[2rem]">
-        LOGO
-      </div>
+      <Link href="/" className="">
+        <Image
+          src={logo_on_white}
+          width={150}
+          height={150}
+          className="relative "
+        />
+      </Link>
       {/* navlinks */}
 
       {/* Mobile Nav */}

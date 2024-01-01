@@ -17,7 +17,7 @@ function page() {
       <Products />
       <AboutUs />
       <FeaturedProducts />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Partnership />
       <CTApartner />
       <Footer />
