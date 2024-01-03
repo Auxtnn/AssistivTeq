@@ -242,16 +242,8 @@ const Blog =  () => {
                     {/* <h1 className="text-red-600 absolute top-0 z-50 text-[5rem]">
                       {data.title}
                     </h1> */}
-                    {data.length > 0 ? (
-                      data.map((data, index) => (
-                        <div key={index}>
-                          <h2>{data.title}</h2>
-                          {/* Render other properties of the post */}
-                        </div>
-                      ))
-                    ) : (
-                      <p>No posts to show</p>
-                    )}
+                    
+                  
                     <div className="flex flex-col items-stretch w-5/12 max-md:w-full max-md:ml-0">
                       <div className=" bg-white flex w-full flex-col mx-auto rounded-2xl">
                         <Image
