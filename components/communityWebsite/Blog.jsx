@@ -8,95 +8,57 @@ import Link from "next/link";
 import Image from "next/image";
 import Newsletter from "./Newsletter";
 // import { getPosts } from "../../sanity/lib/query";
-import imageUrlBuilder from "@sanity/image-url";
+// import imageUrlBuilder from "@sanity/image-url";
 import PostCard from "./PostCard";
 
-import { createClient } from "next-sanity";
+// import { createClient } from "next-sanity";
 
 
 
 // creating client
 
-const client = createClient({
-  projectId: "3uqxlvwh",
-  dataset: "production",
-  apiVersion: "2022-03-25",
-  useCdn: false,
-});
+// const client = createClient({
+//   projectId: "3uqxlvwh",
+//   dataset: "production",
+//   apiVersion: "2022-03-25",
+//   useCdn: false,
+// });
 
-const builder = imageUrlBuilder(client);
-export const urlFor = (source) => builder.image(source);
+// const builder = imageUrlBuilder(client);
+// export const urlFor = (source) => builder.image(source);
 
-// querying 
-const getData = async () => {
-  try {
-    const res = await client.fetch(
-      `*[_type == 'post']`,
-      {},
-      {
-        // You can set any of the `cache` and `next` options as you would on a standard `fetch` call
-        cache: "force-cache",
-        next: { tags: ["post"] },
-      }
-    );
-    console.log(res)
-    return res;
-  } catch (error) {
-    console.log(error);
-    return;
-  }
-};
-
-
+// // querying 
+// const getData = async () => {
+//   try {
+//     const res = await client.fetch(
+//       `*[_type == 'post']`,
+//       {},
+//       {
+//         // You can set any of the `cache` and `next` options as you would on a standard `fetch` call
+//         cache: "force-cache",
+//         next: { tags: ["post"] },
+//       }
+//     );
+//     console.log(res)
+//     return res;
+//   } catch (error) {
+//     console.log(error);
+//     return;
+//   }
+// };
 
 
-
-const Blog = async () => {
+const Blog =  () => {
 
 
   const [posts, setPosts] = useState([]);
 
-
-
-  
-
-  // useEffect(() => {
-  //   const fetchPosts = async () => {
-  //     try {
-  //       const fetchedPosts = await client.fetch(`*[_type == 'post']`);
-  //       setPosts(fetchedPosts);
-  //     } catch (error) {
-  //       console.error('Error fetching posts:', error);
-  //       setPosts([]);
-  //     }
-  //   };
-
-  //   fetchPosts();
-  // }, []);
-
   
 
   const [mappedPosts, setMappedPosts] = useState([]);
-  // useEffect(() => {
-  //   if (posts.length) {
-  //     const imageBuilder = imageUrlBuilder(client);
-  //     setMappedPosts(
-  //       posts.map((post) => {
-  //         return {
-  //           ...post,
-  //           mainImage: imageBuilder
-  //             .image(post.mainImage)
-  //             .width(450)
-  //             .height(500),
-  //         };
-  //       })
-  //     );
-  //   } else {
-  //     setMappedPosts([]);
-  //   }
-  // }, [posts]);
 
-  const data = await getData()
+
+  // const data = await getData()
 
   return (
     <section className="pt-10 bg-gray-50 sm:pt-16 lg:pt-14">
