@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { john, Group } from "@/public/images";
+import { tife, kosi, auxtnn, Group } from "@/public/images";
 import { MdArrowBackIos } from "react-icons/md";
 import { GrNext } from "react-icons/gr";
 
@@ -9,24 +9,24 @@ const MeetOurMembers = () => {
   const testimonies = [
     {
       name: "Boluwatife Oladejo",
-      role: "Community Manager",
-      imageSrc: john,
+      role: "Co-founder",
+      imageSrc: tife,
       quote:
-        "Discovering this inclusive tech community has been a game-changer for me. As someone with a disability, I often felt isolated, but here, I've found a supportive network that embraces diversity and empowers us through technology. Thanks to this community, I've learned, grown, and connected with like-minded individuals, making me feel part of something bigger than myself. I'm grateful to be a part of the Adaptive Tech Hub.",
+        "As a co-founder of Assistivteq, I am immensely proud of the impact our technology has had on improving accessibility and inclusivity for individuals worldwide. Our dedication to innovation and user-centric design drives us to continually push the boundaries of what's possible, ensuring that everyone can fully engage with the digital world. I'm excited to continue our journey of making a difference, one assistive solution at a time.",
     },
     {
       name: "Nnanweobi Ikechukwu",
       role: "Community Manager",
-      imageSrc: john,
+      imageSrc: auxtnn,
       quote:
-        "Discovering this inclusive tech community has been a game-changer for me. As someone with a disability, I often felt isolated, but here, I've found a supportive network that embraces diversity and empowers us through technology. Thanks to this community, I've learned, grown, and connected with like-minded individuals, making me feel part of something bigger than myself. I'm grateful to be a part of the Adaptive Tech Hub.",
+        " I am honored to welcome you to our digital space dedicated to transforming the experiences of individuals with diverse abilities. At Assistivteq, we are driven by a profound belief in the transformative power of technology. Through innovative assistive solutions, we endeavor to dissolve barriers, nurture independence, and foster a society where inclusivity reigns supreme, promoting accessibility and independence in equal measure.",
     },
     {
       name: "Okwuosa Kosisochuckwu",
       role: "Community Manager",
-      imageSrc: john,
+      imageSrc: kosi,
       quote:
-        "Discovering this inclusive tech community has been a game-changer for me. As someone with a disability, I often felt isolated, but here, I've found a supportive network that embraces diversity and empowers us through technology. Thanks to this community, I've learned, grown, and connected with like-minded individuals, making me feel part of something bigger than myself. I'm grateful to be a part of the Adaptive Tech Hub.",
+        "AssistivTeq is revolutionizing accessibility, empowering disabled individuals worldwide with innovative technology. Through community engagement and advocacy, we break barriers and foster inclusivity.",
     },
     // Add more testimonies here...
   ];

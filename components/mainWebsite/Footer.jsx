@@ -1,7 +1,7 @@
 import React from "react";
 import { mainFooterLinks } from "@/constant";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
 import Image from "next/image";
 import { Link } from "@mui/material";
 import { logo_on_white } from "@/public/images";
@@ -79,24 +79,35 @@ const Footer = () => {
           </Link>
           <div className="flex flex-col md:flex-row-reverse md:items-center md:justify-between md:w-[50%] pb-4">
             <div className="flex gap-[.5rem] py-[1.06rem]">
-              <a
-                href="/"
-                className="flex items-center justify-center border-2 rounded-[50%] w-[1.5rem] h-[1.5rem]"
-              >
-                <FaFacebookF className="w-[.75rem] h-[.75rem] text-white" />
-              </a>
-              <a
-                href="/"
-                className="flex items-center justify-center border-2 rounded-[50%] w-[1.5rem] h-[1.5rem]"
-              >
-                <FaInstagram className="w-[.75rem] h-[.75rem] text-white" />
-              </a>
-              <a
-                href="/"
-                className="flex items-center justify-center border-2 rounded-[50%] w-[1.5rem] h-[1.5rem]"
-              >
-                <FaXTwitter className="w-[.75rem] h-[.75rem] text-white" />
-              </a>
+              <div className="flex items-center justify-center border-2 rounded-[50%] w-[1.5rem] h-[1.5rem]">
+                <Link href="https://www.facebook.com/assistivteq">
+                  <FaFacebookF className="w-[.75rem] h-[.75rem] text-white" />
+                </Link>
+              </div>
+              <div className="flex items-center justify-center border-2 rounded-[50%] w-[1.5rem] h-[1.5rem]">
+                <Link
+                  href="https://www.instagram.com/assistivteq_community/?igsh=MXNodDA1dHhveWlheQ%3D%3D"
+                  target="_blank"
+                >
+                  <FaInstagram className="w-[.75rem] h-[.75rem] text-white" />
+                </Link>
+              </div>
+              <div className="flex items-center justify-center border-2 rounded-[50%] w-[1.5rem] h-[1.5rem]">
+                <Link
+                  href="https://twitter.com/assistivteq?t=AmxgQnA1ra78I9T_ShmSbw&s=09"
+                  target="_blank"
+                >
+                  <FaXTwitter className="w-[.75rem] h-[.75rem] text-white" />
+                </Link>
+              </div>
+              <div className="flex items-center justify-center border-2 rounded-[50%] w-[1.5rem] h-[1.5rem]">
+                <Link
+                  href="https://www.linkedin.com/company/assistivteq/"
+                  target="_blank"
+                >
+                  <FaLinkedinIn className="w-[.75rem] h-[.75rem] text-white" />
+                </Link>
+              </div>
             </div>
             <div>
               <p className="text-[.625rem] leading-[1.875rem] text-white">

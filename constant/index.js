@@ -1,112 +1,139 @@
-import { wheelchair1, wheelchair2, wheelchair3 } from "@/public/images"
+import { wheelchair1, wheelchair2, wheelchair3 } from "@/public/images";
 
 export const footerLinks = [
   {
-    title: 'NAVIGATION',
+    title: "NAVIGATION",
     links: [
-      {title: 'Home', href: '/'},
-      {title: 'About Us', href: '#about'},
-      {title: 'What we do', href: '#product'},
-      {title: 'Join Us', href: '/community'},
-      {title: 'Form', href: '#contact'}
-    ]
+      { title: "Home", href: "/" },
+      { title: "About Us", href: "/community/about" },
+      { title: "What we do", href: "/community/supports" },
+      { title: "Blog", href: "/community/blog" },
+      { title: "Join Us", href: "/community" },
+      { title: "Form", href: "#contact" },
+    ],
   },
   {
-    title: 'WHAT WE DO',
+    title: "WHAT WE DO",
     links: [
-      'Encouraging Inclusion',
-      'Encouraging Inclusion',
-      'Strengthening Advocacy',
-      'Sharing Information',
-      'Building Careers in Tech',
-      'Education & awareness',
-      'Making a difference'
-    ]
+      "Encouraging Inclusion",
+      "Encouraging Inclusion",
+      "Strengthening Advocacy",
+      "Sharing Information",
+      "Building Careers in Tech",
+      "Education & awareness",
+      "Making a difference",
+    ],
   },
   {
-    title: 'LEGAL',
+    title: "LEGAL",
     links: [
-      {title: 'General Info', href: ''},
-      {title: 'Privacy Policy', href: '/policy'},
-      {title: 'Terms of Service', href: '/terms'}
-    ]
+      { title: "General Info", href: "" },
+      { title: "Privacy Policy", href: "/policy" },
+      { title: "Terms of Service", href: "/terms" },
+    ],
   },
   {
-    title: 'TALK TO US',
+    title: "TALK TO US",
     links: [
-      {title: 'community@Assistivteq.com', href: 'mailto:community@assistivteq.com'},
-      {title: '+2349120026559', href: 'tel:+2349120026559'},
-      {title: 'Contact Us', href: '#contact'},
-      {title: 'Facebook', href: '/'},
-      {title: 'Instagram', href: '/'},
-      {title: 'LinkedIn', href: '/'}
-    ]
-  }
-]
+      {
+        title: "community@Assistivteq.com",
+        href: "mailto:community@assistivteq.com",
+      },
+      { title: "+2349120026559", href: "tel:+2349120026559" },
+      { title: "+2349049802906", href: "tel:+2349049802906" },
 
+      { title: "Facebook", href: "https://www.facebook.com/assistivteq" },
+      {
+        title: "Twitter",
+        href: "https://twitter.com/assistivteq?t=AmxgQnA1ra78I9T_ShmSbw&s=09",
+      },
+      {
+        title: "Instagram",
+        href: "https://www.instagram.com/assistivteq_community/?igsh=MXNodDA1dHhveWlheQ%3D%3D",
+      },
+      {
+        title: "LinkedIn",
+        href: "https://www.linkedin.com/company/assistivteq/",
+      },
+    ],
+  },
+];
 
 export const mainFooterLinks = [
   {
-    title: 'NAVIGATION',
+    title: "NAVIGATION",
     links: [
-      {title: 'Home', href: '/'},
-      {title: 'About Us', href: '#about'},
-      {title: 'Products', href: '#product'},
-      {title: 'Community', href: '/community'},
-      {title: 'Contact Us', href: '#contact'}
-    ]
+      { title: "Home", href: "/" },
+      { title: "About Us", href: "#about" },
+      { title: "Products", href: "#product" },
+      { title: "Community", href: "/community" },
+      { title: "Contact Us", href: "#contact" },
+    ],
   },
   {
-    title: 'Products',
+    title: "Products",
     links: [
-      'Mobility Devices',
-      'Vision Devices',
-      'Hearing Aids',
-      'Cognitive Support',
-      'Speech Devices',
-      'Customized Support'
-    ]
+      "Mobility Devices",
+      "Vision Devices",
+      "Hearing Aids",
+      "Cognitive Support",
+      "Speech Devices",
+      "Customized Support",
+      "Assistive Apps",
+    ],
   },
   {
-    title: 'LEGAL',
+    title: "LEGAL",
     links: [
-      {title: 'General Info', href: ''},
-      {title: 'Privacy Policy', href: '/policy'},
-      {title: 'Terms of Service', href: '/terms'}
-    ]
+      { title: "General Info", href: "" },
+      { title: "Privacy Policy", href: "/policy" },
+      { title: "Terms of Service", href: "/terms" },
+    ],
   },
   {
-    title: 'TALK TO US',
+    title: "TALK TO US",
     links: [
-      {title: 'Support@Assistivteq.com', href: 'mailto:support@assistivteq.com'},
-      {title: '+2349120026559', href: 'tel:+2349120026559'},
-      {title: 'Contact Us', href: '#contact'},
-      {title: 'Facebook', href: '/'},
-      {title: 'Instagram', href: 'https:www.instagram.com/assistivteq_'},
-      {title: 'LinkedIn', href: '/'}
-    ]
-  }
-]
-
+      {
+        title: "Support@Assistivteq.com",
+        href: "mailto:support@assistivteq.com",
+      },
+      { title: "+2349049802906", href: "tel:+2349049802906" },
+      { title: "+2349120026559", href: "tel:+2349120026559" },
+      { title: "Facebook", href: "https://www.facebook.com/assistivteq" },
+      {
+        title: "Twitter",
+        href: "https://twitter.com/assistivteq?t=AmxgQnA1ra78I9T_ShmSbw&s=09",
+      },
+      {
+        title: "Instagram",
+        href: "https://www.instagram.com/assistivteq_/?igsh=MTg5MTNldXU4czBrcw%3D%3D",
+      },
+      {
+        title: "LinkedIn",
+        href: "https://www.linkedin.com/company/assistivteq/",
+      },
+    ],
+  },
+];
 
 export const navLinks = [
-  {href: '/', key:'home', title:'Home'},
-  {href: '/community/about', key:'about', title:'About Us'},
-  {href: '/community/supports', key:'support', title:'Supports'},
-  {href: '/community/blog', key:'blog', title:'Blog'},
-]
+  { href: "/community", key: "home", title: "Home" },
+  { href: "/community/about", key: "about", title: "About Us" },
+  { href: "/community/supports", key: "support", title: "Supports" },
+  { href: "/community/blog", key: "blog", title: "Blog" },
+];
 export const mainNavLinks = [
-  {href: '/', key:'home', title:'Home'},
-  {href: '#about', key:'about', title:'About Us'},
-  {href: '#product', key:'products', title:'Products'},
-  {href: '/community', key:'community', title:'Community'},
-  {href: '/blog', key:'Blog', title:'Blog'}
-]
+  { href: "/", key: "home", title: "Home" },
+  { href: "#about", key: "about", title: "About Us" },
+  { href: "#product", key: "products", title: "Products" },
+  { href: "/community", key: "community", title: "Community" },
+  { href: "/blog", key: "Blog", title: "Blog" },
+];
 
 export const mobilityDevices = [
-  {key: 'vision1', imageSrc: '/images/wheelchair1.png'},
-  {key: 'vision2', imageSrc: '/images/wheelchair2.png'},
-  {key: 'vision3', imageSrc: '/images/wheelchair3.png'},
-  {key: 'vision4', imageSrc: '/images/wheelchair1.png'},
-  {key: 'vision5', imageSrc: '/images/wheelchair1.png'},
-]
+  { key: "vision1", imageSrc: "/images/wheelchair1.png" },
+  { key: "vision2", imageSrc: "/images/wheelchair2.png" },
+  { key: "vision3", imageSrc: "/images/wheelchair3.png" },
+  { key: "vision4", imageSrc: "/images/wheelchair1.png" },
+  { key: "vision5", imageSrc: "/images/wheelchair1.png" },
+];

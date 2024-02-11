@@ -1,8 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import { partners } from "@/public/images";
+import { logo } from "@/public/images";
 import AnimatedSection from "./Animation";
-
 
 const Partnership = () => {
   return (
@@ -18,7 +17,7 @@ const Partnership = () => {
         </div>
         <div className="mt-8 lg:mt-0">
           <Image
-            src={partners}
+            src={logo}
             alt="partner brands"
             className="relative w-auto lg:w-[25.9rem] h-auto"
           />

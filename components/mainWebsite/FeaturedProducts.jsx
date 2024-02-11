@@ -82,6 +82,7 @@ const FeaturedProducts = () => {
                 <Tab label="Hearing Aids" {...a11yProps(3)} />
                 <Tab label="Cognitive Supports" {...a11yProps(4)} />
                 <Tab label="Speech Devices" {...a11yProps(5)} />
+                <Tab label="Asssistive Apps" {...a11yProps(6)} />
               </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
@@ -113,6 +114,9 @@ const FeaturedProducts = () => {
               Coming Soon...
             </CustomTabPanel>
             <CustomTabPanel value={value} index={5}>
+              Coming Soon...
+            </CustomTabPanel>
+            <CustomTabPanel value={value} index={6}>
               Coming Soon...
             </CustomTabPanel>
           </Box>
@@ -141,6 +145,7 @@ const FeaturedProducts = () => {
                 <Tab label="Hearing Aids" {...a11yProps(3)} />
                 <Tab label="Cognitive Supports" {...a11yProps(4)} />
                 <Tab label="Speech Devices" {...a11yProps(5)} />
+                <Tab label="Asssistive Apps" {...a11yProps(6)} />
               </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
@@ -172,6 +177,9 @@ const FeaturedProducts = () => {
               Coming Soon...
             </CustomTabPanel>
             <CustomTabPanel value={value} index={5}>
+              Coming Soon...
+            </CustomTabPanel>
+            <CustomTabPanel value={value} index={6}>
               Coming Soon...
             </CustomTabPanel>
           </Box>
