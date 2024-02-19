@@ -40,7 +40,6 @@ const Footer = () => {
                       <li key={key}>
                         <Link
                           href={link.href}
-                          target="_blank"
                           className="text-white opacity-[.79] text-[.75rem] hover:opacity-10"
                         >
                           {link.title}

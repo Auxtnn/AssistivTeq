@@ -27,9 +27,8 @@ export const footerLinks = [
   {
     title: "LEGAL",
     links: [
-      { title: "General Info", href: "" },
-      { title: "Privacy Policy", href: "/policy" },
-      { title: "Terms of Service", href: "/terms" },
+      { title: "Privacy Policy", href: "/community/policy" },
+      { title: "Communtiy Guidelines", href: "/community/guidelines" },
     ],
   },
   {
@@ -85,7 +84,6 @@ export const mainFooterLinks = [
   {
     title: "LEGAL",
     links: [
-      { title: "General Info", href: "" },
       { title: "Privacy Policy", href: "/policy" },
       { title: "Terms of Service", href: "/terms" },
     ],
