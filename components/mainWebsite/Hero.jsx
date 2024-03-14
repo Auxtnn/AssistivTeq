@@ -30,7 +30,7 @@ const Hero = () => {
               icon: <CiMobile4 />,
             })}
             {productLine({
-              text: "Hairing Impairment",
+              text: "Hearing Impairment",
               icon: <IoMdHeadset />,
             })}
             {productLine({
