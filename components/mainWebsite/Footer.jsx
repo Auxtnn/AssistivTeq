@@ -18,18 +18,18 @@ const Footer = () => {
           Explore the Future of Accessibility
         </h1>
         <div className="flex flex-col lg:flex-row gap-[0.75rem] mt-[1.75rem] mb-[3.75rem]">
-          <Link
+          <a
             href="#product"
             className="px-8 py-[1.12rem] lg:w-max lg:h-max flex items-center justify-center bg-primary text-white rounded-[0.5rem] border-2 border-white font-[700]"
           >
             Explore Our Products
-          </Link>
-          <Link
+          </a>
+          <a
             href="#contact"
             className="lg:w-max lg:h-max px-8 py-[1.12rem] flex items-center justify-center bg-white text-primary rounded-[0.5rem] font-[700]"
           >
             Partner With Us
-          </Link>
+          </a>
         </div>
       </div>
       <section className="pl-[1.09rem] pr-[.78rem] ">
@@ -45,12 +45,12 @@ const Footer = () => {
                     // For title links
                     return (
                       <li key={key}>
-                        <Link
+                        <a
                           href={link.href}
-                          className="text-white opacity-[.79] text-[.75rem] hover:opacity-10"
+                          className=" text-white opacity-[.79] text-[.75rem] hover:opacity-10"
                         >
                           {link.title}
-                        </Link>
+                        </a>
                       </li>
                     );
                   } else {

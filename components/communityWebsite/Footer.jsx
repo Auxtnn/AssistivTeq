@@ -62,12 +62,12 @@ const Footer = () => {
                     // For title links
                     return (
                       <li key={key}>
-                        <Link
+                        <a
                           href={link.href}
-                          className="text-white opacity-[.79] text-[.75rem] hover:opacity-10"
+                          className=" text-white opacity-[.79] text-[.75rem] hover:opacity-10"
                         >
                           {link.title}
-                        </Link>
+                        </a>
                       </li>
                     );
                   } else {
