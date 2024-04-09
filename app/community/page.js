@@ -8,14 +8,12 @@ import Home from "@/components/communityWebsite/Home";
 
 export default function HomeComm() {
   return (
-    <>
+    <div>
       <Nav />
       <Home />
       <MeetOurMembers />
-
       <Newsletter />
-
       <Footer />
-    </>
+    </div>
   );
 }

@@ -7,6 +7,10 @@ import { Link } from "@mui/material";
 import { logo_on_white } from "@/public/images";
 
 const Footer = () => {
+  const getFullYear = () => {
+    const currentYear = new Date().getFullYear();
+    return currentYear;
+  };
   return (
     <footer className="bg-primary pt-[2.25rem] md:pt-[6.62rem]">
       <div className="flex flex-col items-center">
@@ -53,10 +57,7 @@ const Footer = () => {
                     // For non-title links
                     return (
                       <li key={key}>
-                        <p
-                          className="text-white opacity-[.79] text-[.75rem]"
-                          href=""
-                        >
+                        <p className="text-white opacity-[.79] text-[.75rem]">
                           {link}
                         </p>
                       </li>
@@ -82,7 +83,10 @@ const Footer = () => {
             <div className="flex gap-[.5rem] py-[1.06rem]">
               <div className="flex items-center justify-center border-2 rounded-[50%] w-[1.5rem] h-[1.5rem]">
                 <Link href="https://www.facebook.com/assistivteq">
-                  <FaFacebookF className="w-[.75rem] h-[.75rem] text-white" />
+                  <FaFacebookF
+                    target="_blank"
+                    className="w-[.75rem] h-[.75rem] text-white"
+                  />
                 </Link>
               </div>
               <div className="flex items-center justify-center border-2 rounded-[50%] w-[1.5rem] h-[1.5rem]">
@@ -112,7 +116,7 @@ const Footer = () => {
             </div>
             <div>
               <p className="text-[.625rem] leading-[1.875rem] text-white">
-                © 2023 AssistivTeq Media. All Rights Reserved.
+                © {getFullYear()} AssistivTeq Media. All Rights Reserved.
               </p>
             </div>
           </div>

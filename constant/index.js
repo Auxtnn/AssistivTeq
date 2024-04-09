@@ -7,9 +7,9 @@ export const footerLinks = [
       { title: "Home", href: "/" },
       { title: "About Us", href: "/community/about" },
       { title: "What we do", href: "/community/supports" },
-
-      { title: "Join Us", href: "/community" },
-      { title: "Form", href: "#contact" },
+      { title: "Gallery", href: "/community/about/#gallery" },
+      { title: "Newsletter", href: "/community/#newsletter" },
+      { title: "Meet Members", href: "/community/#team" },
     ],
   },
   {

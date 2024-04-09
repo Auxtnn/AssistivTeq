@@ -11,6 +11,10 @@ import { logo_on_white } from "@/public/images";
 import Form from "@/components/communityWebsite/Form";
 
 const Footer = () => {
+  const getFullYear = () => {
+    const currentYear = new Date().getFullYear();
+    return currentYear;
+  };
   const [openModal, setOpenModal] = useState(false);
 
   const [open, setOpen] = useState(false);
@@ -70,10 +74,7 @@ const Footer = () => {
                     // For non-title links
                     return (
                       <li key={key}>
-                        <p
-                          className="text-white opacity-[.79] text-[.75rem]"
-                          href=""
-                        >
+                        <p className="text-white opacity-[.79] text-[.75rem]">
                           {link}
                         </p>
                       </li>
@@ -99,7 +100,10 @@ const Footer = () => {
             <div className="flex gap-[.5rem] py-[1.06rem]">
               <div className="flex items-center justify-center border-2 rounded-[50%] w-[1.5rem] h-[1.5rem]">
                 <Link href="https://www.facebook.com/assistivteq">
-                  <FaFacebookF className="w-[.75rem] h-[.75rem] text-white" />
+                  <FaFacebookF
+                    className="w-[.75rem] h-[.75rem] text-white"
+                    target="_blank"
+                  />
                 </Link>
               </div>
               <div className="flex items-center justify-center border-2 rounded-[50%] w-[1.5rem] h-[1.5rem]">
@@ -129,7 +133,7 @@ const Footer = () => {
             </div>
             <div>
               <p className="text-[.625rem] leading-[1.875rem] text-white">
-                © 2023 AssistivTeq Media. All Rights Reserved.
+                © {getFullYear()} AssistivTeq Media. All Rights Reserved.
               </p>
             </div>
           </div>

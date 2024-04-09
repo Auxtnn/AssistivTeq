@@ -5,10 +5,11 @@ import Policy from "@/components/mainWebsite/Policy";
 
 const PolicyMain = () => {
   return (
-    <>
+    <div>
+      <Nav />
       <Policy />
       <Footer />
-    </>
+    </div>
   );
 };
 

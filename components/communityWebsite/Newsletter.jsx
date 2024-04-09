@@ -3,7 +3,10 @@ import Link from "next/link";
 
 const Newsletter = () => {
   return (
-    <section className=" flex flex-col items-center justify-center pb-[2.47rem] py-[2.53rem] md:py-[5rem]">
+    <section
+      id="newsletter"
+      className=" flex flex-col items-center justify-center pb-[2.47rem] py-[2.53rem] md:py-[5rem]"
+    >
       <h1 className="text-heading text-[1.5rem] md:text-[2.25rem]  font-[700] tracking-wide text-center max-w-[11.625rem] md:max-w-[18.625rem]">
         Sign Up For Our Newsletter
       </h1>
