@@ -1,19 +1,17 @@
 'use client'
 import { useState } from 'react';
-import { gallery1, gallery2, gallery3, gallery4 } from '@/public/images';
 import Image from 'next/image';
+
 
 const GalleryComponent = () => {
   const [activeSet, setActiveSet] = useState(1);
 
   const images = [
-    gallery1,
-    gallery2,
-    gallery3,
-    gallery4,
-    gallery4,
-    gallery4,
-    gallery4,
+    '/images/gallery1.jpg',
+    '/images/gallery2.jpg',
+    '/images/gallery3.jpg',
+    '/images/gallery4.jpg',
+    '/images/gallery5.jpg',
   ];
 
   const sets = [];
@@ -38,6 +36,8 @@ const GalleryComponent = () => {
                 src={image}
                 alt={`Image ${index + 1}`}
                 className="w-full h-auto"
+                width={100}
+                height={100}
               />
             </div>
           ))}

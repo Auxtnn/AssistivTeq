@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { GoDotFill } from "react-icons/go";
 import { motion } from "framer-motion";
-
 import {
   headerImage,
   gift,
@@ -15,34 +14,35 @@ import {
   people,
   john,
   vector,
-} from "@/public/images";
-
-import Card from "@/components/communityWebsite/Card";
-import MeetOurMembers from "@/components/communityWebsite/MeetMembers";
-import Newsletter from "@/components/communityWebsite/Newsletter";
-import Footer from "@/components/communityWebsite/Footer";
-import Form from "@/components/communityWebsite/Form";
+} from "../../public/images";
+import Card from "./Card";
+import Form from "./Form";
 import { useState } from "react";
 import Link from "next/link";
 
 export default function Home() {
   const provideCards = ({ image, title }) => {
     return (
-      <div className="w-[18.3125rem] h-[24.375rem] md:w-[17.7rem] overflow-hidden shadow-card rounded-[0.5rem] rounded-t-[0.8rem]">
-        <div className="h-[14.125rem] ">
-          <Image src={image} alt="images" className="relative w-[100%]" />
+      <div className="w-full h-auto min-h-[24.375rem] overflow-hidden shadow-card rounded-[0.5rem] rounded-t-[0.8rem]">
+        <div className="relative h-0 pb-[77%]"> {/* Aspect ratio container */}
+          <Image 
+            src={image} 
+            alt={title}
+            fill
+            className="object-cover"
+          />
         </div>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="pl-[.95rem] pb-[.84rem]"
+          className="p-4"
         >
-          <h1 className="w-[10.09rem] font-[600] text-heading text-[1.125rem] tracking-[0.06rem] mt-[2.13rem] mb-[1.31rem] leading-normal">
+          <h1 className="font-semibold text-heading text-lg md:text-xl mb-4 leading-normal">
             {title}
           </h1>
           <Link
-            className="text-primary text-[1rem] tracking-wide"
+            className="text-primary text-base tracking-wide hover:underline"
             href="/community/supports"
           >
             Read More
@@ -53,97 +53,97 @@ export default function Home() {
   };
 
   const [openModal, setOpenModal] = useState(false);
-
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
     setOpenModal(!openModal);
     setOpen(!open);
   };
+
   const handleClose = () => {
     setOpen(!open);
     setOpenModal(!openModal);
   };
 
   return (
-    <main className="">
-      <Image src={vector} alt="vector" className="absolute top-0 left-0" />
-      <section
-        id="header"
-        className="mt-[2.5rem] lg:mt-[1.5rem] flex lg:justify-between lg:px-[7rem]"
-      >
-        <div className="flex flex-col  lg:items-start items-center justify-center md:gap-[1.5rem] w-screen">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={[{ y: [50, 0] }, { opacity: 1 }]}
-            transition={{ duration: 0.85, ease: "easeIn" }}
-            className=" lg:w-[29rem] md:w-[20rem] tracking-[.06rem] text-[2rem] lg:text-[3rem] font-[700] text-center lg:text-left text-heading"
-          >
-            Building Bridges, Breaking Barriers
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="w-[21rem] md:w-[30rem] lg:text-left text-heading opacity-80 text-[1.125rem] tracking-[0.0225rem] text-center mt-[2.5rem] md:mt-0 md:leading-[2rem]"
-          >
-            A tech community that celebrates diversity and champions equality.
-            Together, we're breaking down barriers and creating a world where
-            every person's abilities shine.
-          </motion.div>
-          <Image
-            src={headerImage}
-            alt="header image"
-            className="relative w-[19rem] md:w-[35rem] h-[17rem] md:h-[27rem] mb-[2.7rem] lg:hidden"
-          />
-          <button
-            onClick={handleOpen}
-            className="text-white bg-primary rounded-[1rem] px-[2rem] py-[1.13rem] md:mt-0 font-[700]"
-          >
-            Join Us
-          </button>
-        </div>
-        {openModal && (
-          <div className="absolute right-[50%]">
-            <Form handleClose={handleClose} open={open} />
+    <main className="relative min-h-screen w-full overflow-x-hidden">
+      <Image 
+        src={vector} 
+        alt="vector" 
+        className="absolute top-0 left-0 w-full md:w-auto" 
+      />
+      
+      {/* Header Section */}
+      <section className="container mx-auto px-4 md:px-6 lg:px-8 pt-10 lg:pt-16">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="flex flex-col items-center lg:items-start space-y-6">
+            <motion.h1
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85 }}
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-heading text-center lg:text-left"
+            >
+              Building Bridges, Breaking Barriers
+            </motion.h1>
+            
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="text-lg text-heading opacity-80 text-center lg:text-left max-w-2xl"
+            >
+              A tech community that celebrates diversity and champions equality.
+              Together, we're breaking down barriers and creating a world where
+              every person's abilities shine.
+            </motion.p>
+
+            <button
+              onClick={handleOpen}
+              className="text-white bg-primary rounded-2xl px-8 py-4 font-bold transform hover:scale-105 transition-transform"
+            >
+              Join Us
+            </button>
           </div>
-        )}
-        {/* Large screen header image */}
-        <motion.div
-          whileInView={{ x: [100, 0] }}
-          className="hidden lg:flex"
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-        >
-          <Image
-            src={headerImage}
-            alt="header image"
-            className="relative w-[50rem] h-[27rem]"
-          />
-        </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative w-full max-w-2xl mx-auto lg:mx-0"
+          >
+            <Image
+              src={headerImage}
+              alt="header image"
+              className="w-full h-auto"
+            />
+          </motion.div>
+        </div>
       </section>
-      <section className="mt-[2.7rem] lg:mt-[6.23rem] lg:px-[7rem] flex flex-col items-center ">
-        <div className="flex flex-col lg:flex-row items-center lg:gap-[15rem]">
-          <div className="text-center md:text-left max-w-[21rem] lg:max-w-[24.5rem] mb-4">
-            <h1 className="text-heading text-[1.5rem] md:text-[2.25rem] font-[700] tracking-[0.09rem]">
+
+      {/* Community Section */}
+      <section className="container mx-auto px-4 md:px-6 lg:px-8 py-16">
+        <div className="grid lg:grid-cols-2 gap-8 items-center mb-16">
+          <div className="text-center lg:text-left">
+            <h2 className="text-2xl md:text-4xl font-bold text-heading mb-4">
               AssistivTeq Community
-            </h1>
+            </h2>
           </div>
-          <motion.div
+          
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="max-w-[20rem] md:max-w-[34rem] text-center lg:text-left text-heading opacity-80 tracking-wider"
+            transition={{ duration: 0.5 }}
+            className="text-base text-heading opacity-80 text-center lg:text-left"
           >
-            <p className="text-[1rem] tracking-[0.04rem]">
-              We are the beacon of inclusive support in tech providing valuable
-              resources, training, and a warm community to accommodate
-              diversity, champion equality, and work tirelessly to create a more
-              inclusive world where every person's unique abilities are
-              recognized and celebrated.
-            </p>
-          </motion.div>
+            We are the beacon of inclusive support in tech providing valuable
+            resources, training, and a warm community to accommodate
+            diversity, champion equality, and work tirelessly to create a more
+            inclusive world where every person's unique abilities are
+            recognized and celebrated.
+          </motion.p>
         </div>
-        <div className="mt-[2.5rem] md:mt-[6.5rem] flex flex-col lg:flex-row gap-[1.25rem] md:gap-[1.38rem] pb-7">
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <Card
             logo={eye}
             title="Our Vision"
@@ -157,112 +157,116 @@ export default function Home() {
           <Card
             logo={gift}
             title="Our Value"
-            text="Empowering disability, fostering inclusion and providing a warm environment to break barriers and create a world where every person’s abilities shine."
+            text="Empowering disability, fostering inclusion and providing a warm environment to break barriers and create a world where every person's abilities shine."
           />
         </div>
       </section>
-      {/* what we provide section */}
-      <section className="flex flex-col  justify-center items-center bg-[#66328E0D]  pb-[2.25rem] lg:pb-[4.39rem]">
-        {/* rectangle */}
-        {/* <div className='absolute left-0 lg:-mt-[36.2rem] -mt-[113rem] md:-mt-[118rem]'>
-          <svg xmlns="http://www.w3.org/2000/svg" width="51" height="72" viewBox="0 0 51 72" fill="none">
-            <circle cx="9.50527" cy="30.0052" r="41.4874" transform="rotate(-14.2544 9.50527 30.0052)" fill="#66328E"/>
-          </svg>
-        </div>  */}
-        <div className="flex lg:gap-[30rem] mt-[2.73rem] lg:mt-[5.48rem] items-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="w-[16.54rem] text-[1.25rem] lg:w-[27.41213rem] md:text-[2rem] font-[700] tracking-[0.08rem] text-center lg:text-left text-heading "
-          >
-            The Support AssistivTeq Community Provides
-          </motion.div>
+
+      {/* What We Provide Section */}
+      <section className="bg-[#66328E0D] py-16">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center mb-12">
+            <motion.h2
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="text-2xl md:text-4xl font-bold text-heading text-center lg:text-left mb-6 lg:mb-0"
+            >
+              The Support AssistivTeq Community Provides
+            </motion.h2>
+            
+            <Link
+              href="/community/supports"
+              className="hidden lg:flex text-white bg-primary rounded-2xl px-8 py-4 font-bold shadow-card hover:opacity-90 transition-opacity"
+            >
+              View More
+            </Link>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {provideCards({
+              title: "Inclusive Community",
+              image: inclusive,
+            })}
+            {provideCards({
+              title: "Training and Empowerment",
+              image: training,
+            })}
+            {provideCards({
+              title: "Education and Awareness",
+              image: education,
+            })}
+            {provideCards({
+              title: "Skill Acquisition Programs",
+              image: skill,
+            })}
+          </div>
+
           <Link
             href="/community/supports"
-            className="hidden lg:flex text-white bg-primary rounded-[1rem] w-[7.35rem] h-[3.5rem] items-center justify-center md:mt-0 font-[700] shadow-card "
+            className="lg:hidden text-white bg-primary rounded-2xl px-8 py-4 font-bold shadow-card mt-8 block w-fit mx-auto"
           >
             View More
           </Link>
         </div>
-        <article className="mt-[2.5rem] lg:mt-[5rem] flex flex-col gap-[1.5rem] lg:flex-row md:flex-wrap md:justify-center">
-          {provideCards({
-            title: "Inclusive Community",
-            image: inclusive,
-          })}
-          {provideCards({
-            title: "Training and Empowerment",
-            image: training,
-          })}
-          {provideCards({
-            title: "Education and Awareness",
-            image: education,
-          })}
-          {provideCards({
-            title: "Skill Acquisition Programs",
-            image: skill,
-          })}
-        </article>
-        <Link
-          href="/community/supports"
-          className="lg:hidden text-white bg-primary rounded-[1rem] px-[2rem] py-[1.13rem] mt-[2.5rem] font-[700] shadow-card"
-        >
-          View More
-        </Link>
       </section>
-      <section className="flex flex-col md:flex-row-reverse items-center md:items-center md:justify-between pt-[2.5rem] md:px-[12.56rem]">
-        <div className="w-[50%]">
-          <Image
-            src={people}
-            alt="people"
-            className="relative w-[18.89rem] md:w-[31.43rem]"
-          />
+
+      {/* Technology Section */}
+      <section className="container mx-auto px-4 md:px-6 lg:px-8 py-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <motion.h2
+              initial={{ opacity: 0, y: -40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85 }}
+              className="text-2xl md:text-4xl font-bold text-heading mb-8 text-center lg:text-left"
+            >
+              How we leverage tech to create an inclusive world
+            </motion.h2>
+
+            <motion.ul
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-4 mb-8"
+            >
+              {[
+                "Support the development and adoption of assistive technologies.",
+                "Embrace the concept of universal design, which aims to create products and environments that are usable by people with the widest range of abilities.",
+                "Leverage our community to connect individuals with disabilities to encourage networking.",
+                "Collaborate with organizations, non-profits, and government agencies to share knowledge and resources for driving positive change."
+              ].map((text, index) => (
+                <li key={index} className="flex items-start gap-4 text-base text-[#252128]">
+                  <GoDotFill className="text-primary flex-shrink-0 mt-1" />
+                  {text}
+                </li>
+              ))}
+            </motion.ul>
+
+            <button
+              onClick={handleOpen}
+              className="text-white bg-primary rounded-2xl px-8 py-4 font-bold shadow-card hover:opacity-90 transition-opacity"
+            >
+              Join Us
+            </button>
+          </div>
+
+          <div className="order-1 lg:order-2">
+            <Image
+              src={people}
+              alt="people"
+              className="w-full max-w-xl mx-auto"
+            />
+          </div>
         </div>
-        <article className="mt-[2.5rem]">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={[{ y: [-40, 0] }, { opacity: 1 }]}
-            transition={{ duration: 0.85, ease: "easeInOut" }}
-            className="w-[21.093rem] md:w-[30.5rem] font-[700] text-heading text-[1.25rem] md:text-[2rem] tracking-[0.08rem] text-center md:text-left"
-          >
-            How we leverage tech to create an inclusive world
-          </motion.div>
-          <motion.ul
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className=" mt-[1.125rem] flex flex-col gap-[.63rem] items-center md:items-start justify-center pb-[3rem] px-4 lg:w-[26.762rem]"
-          >
-            <li className="flex gap-4 text-[#252128] tracking-[0.04rem] leading-normal text-[1rem] ">
-              <GoDotFill className="text-primary w-[2.2rem] h-[1.5rem]" />
-              Support the development and adoption of assistive technologies.
-            </li>
-            <li className="flex gap-4 text-[#252128] tracking-[0.04rem] leading-normal text-[1rem] ">
-              <GoDotFill className="text-primary w-[5rem] h-[1.5rem]" />
-              Embrace the concept of universal design, which aims to create
-              products and environments that are usable by people with the
-              widest range of abilities.
-            </li>
-            <li className="flex gap-4 text-[#252128] tracking-[0.04rem] leading-normal text-[1rem] ">
-              <GoDotFill className="text-primary w-[3rem] h-[1.5rem]" />
-              Leverage our community to connect individuals with disabilities to
-              encourage networking.
-            </li>
-            <li className="flex gap-4 text-[#252128] tracking-[0.04rem] leading-normal text-[1rem] ">
-              <GoDotFill className="text-primary w-[5rem] h-[1.5rem]" />
-              Collaborate with organizations, non-profits, and government
-              agencies to share knowledge and resources for driving positive
-              change.
-            </li>
-          </motion.ul>
-          <button
-            onClick={handleOpen}
-            className=" text-white bg-primary rounded-[1rem] px-[2rem] py-[1.13rem] mt-[3rem] font-[700] shadow-card  ml-4 "
-          >
-            Join Us
-          </button>
-        </article>
       </section>
+
+      {/* Modal */}
+      {openModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+          <Form handleClose={handleClose} open={open} />
+        </div>
+      )}
     </main>
   );
 }

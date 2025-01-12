@@ -4,7 +4,7 @@ import { AiOutlineAppstoreAdd } from "react-icons/ai";
 import { IoMdHeadset } from "react-icons/io";
 import { FaCamera } from "react-icons/fa";
 import Image from "next/image";
-import { onWheelChair } from "@/public/images";
+import { onWheelChair } from "../../public/images";
 import AnimatedSection from "./Animation";
 import Link from "next/link";
 const Hero = () => {

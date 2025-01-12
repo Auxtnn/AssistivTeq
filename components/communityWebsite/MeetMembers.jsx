@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { tife, kosi, auxtnn, Group } from "@/public/images";
+import { tife, kosi, auxtnn, Group } from "../../public/images";
 import { MdArrowBackIos } from "react-icons/md";
 import { GrNext } from "react-icons/gr";
 

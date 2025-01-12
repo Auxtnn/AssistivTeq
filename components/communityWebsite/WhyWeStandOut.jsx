@@ -1,5 +1,5 @@
 import React from "react";
-import { group17 } from "@/public/images";
+import { group17 } from "../../public/images";
 import Image from "next/image";
 
 const WhyWeStandOut = () => {
@@ -26,7 +26,7 @@ const WhyWeStandOut = () => {
           forward-thinkers for unparalleled security, seamless integration, and
           a tech future that's one step ahead.
         </p>
-        <div className="flex justify-around w-[90%]">
+        {/* <div className="flex justify-around w-[90%]">
           <div className="px-[0.97rem] md:px-[1.09rem] py-[0.81rem] md:py-[0.75rem]  bg-[#FFFADE] rounded-[0.5rem]">
             <h1 className="text-[1.25rem] md:text-[2rem] font-[600] tracking-[0.05rem] text-primary">
               30+
@@ -51,7 +51,7 @@ const WhyWeStandOut = () => {
               Ongoing Projects
             </h1>
           </div>
-        </div>
+        </div> */}
       </article>
     </section>
   );

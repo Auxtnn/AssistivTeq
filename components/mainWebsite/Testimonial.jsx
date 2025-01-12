@@ -1,8 +1,8 @@
 "use client";
-import { icon3 } from "@/public/images";
+import { icon3 } from "../../public/images";
 import Image from "next/image";
 import React, { useState } from "react";
-import { image_john, john } from "@/public/images";
+import { image_john, john } from "../../public/images";
 import AnimatedSection from "./Animation";
 
 const Testimonial = () => {

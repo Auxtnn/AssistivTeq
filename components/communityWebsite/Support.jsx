@@ -9,7 +9,7 @@ import {
   education,
   skill,
   mobileHeader,
-} from "@/public/images";
+} from "../../public/images";
 import Image from "next/image";
 import { motion } from "framer-motion";
 

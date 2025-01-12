@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
 const style = {
@@ -124,7 +122,7 @@ export default function Form({ open, handleClose }) {
               {isSubmitting ? "Submitting" : "Submit"}
             </button>
             {successfulMessage && (
-              <p className="text-xl text-green-600 text-center">
+              <p className="text-lg text-green-600 text-center">
                 {successfulMessage}
               </p>
             )}

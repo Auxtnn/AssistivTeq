@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { aboutHeader, aboutHero } from "@/public/images";
+import { aboutHeader, aboutHero } from "../../public/images";
 import Link from "next/link";
 
 const About_us = () => {
@@ -19,8 +19,8 @@ const About_us = () => {
             An inclusive community
           </h1>
           <p className="text-center text-[1rem] tracking-[0.04rem] mb-[2.5rem] w-[18.096rem] md:w-[34.32rem] md:text-[1rem] md:text-left text-[#252128CC]">
-            Incepted in 2023, our aim is to provide valuable resources,
-            training, and a warm community to accomodate diversity, champion
+            Founded in 2023, our aim is to provide valuable resources,
+            training, and a warm community to accommodate diversity, champion
             equality, and work tirelessly to create a more inclusive world where
             every person's unique abilities are recognized and celebrated.
           </p>

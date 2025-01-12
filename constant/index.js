@@ -1,4 +1,4 @@
-import { wheelchair1, wheelchair2, wheelchair3 } from "@/public/images";
+
 
 export const footerLinks = [
   {
@@ -28,14 +28,14 @@ export const footerLinks = [
     title: "LEGAL",
     links: [
       { title: "Privacy Policy", href: "/community/policy" },
-      { title: "Communtiy Guidelines", href: "/community/guidelines" },
+      { title: "Community Guidelines", href: "/community/guidelines" },
     ],
   },
   {
     title: "TALK TO US",
     links: [
       {
-        title: "community@Assistivteq.com",
+        title: "community@assistivteq.com",
         href: "mailto:community@assistivteq.com",
       },
       { title: "+2349120026559", href: "tel:+2349120026559" },
@@ -63,10 +63,10 @@ export const mainFooterLinks = [
     title: "NAVIGATION",
     links: [
       { title: "Home", href: "/" },
-      { title: "About Us", href: "#about" },
-      { title: "Products", href: "#product" },
+      { title: "About Us", href: "/#about" },
+      { title: "Products", href: "/#product" },
       { title: "Community", href: "/community" },
-      { title: "Contact Us", href: "#contact" },
+      { title: "Contact Us", href: "/#contact" },
     ],
   },
   {
@@ -92,7 +92,7 @@ export const mainFooterLinks = [
     title: "TALK TO US",
     links: [
       {
-        title: "Support@Assistivteq.com",
+        title: "support@assistivteq.com",
         href: "mailto:support@assistivteq.com",
       },
       { title: "+2349049802906", href: "tel:+2349049802906" },
@@ -121,10 +121,13 @@ export const navLinks = [
 ];
 export const mainNavLinks = [
   { href: "/", key: "home", title: "Home" },
-  { href: "#about", key: "about", title: "About Us" },
-  { href: "#product", key: "products", title: "Products" },
+  { href: "/#about", key: "about", title: "About Us" },
+  { href: "/#product", key: "products", title: "Products" },
+  { href: "blog", key: "blog", title: "Blog" },
   { href: "/community", key: "community", title: "Community" },
-];
+]; 
+
+
 
 export const mobilityDevices = [
   { key: "vision1", imageSrc: "/images/wheelchair1.png" },

@@ -12,10 +12,6 @@ import aboutHeader from "./about_page.png";
 import aboutHero from "./about-hero.png";
 import group17 from "./group17.png";
 import wheelChair from "./wheel-chair.png";
-import gallery1 from "./gallery_1.png";
-import gallery2 from "./gallery_2.png";
-import gallery3 from "./gallery_3.png";
-import gallery4 from "./gallery_4.png";
 import vector from "./vector.png";
 import serviceHero from "./serviceHero.png";
 import mobileHeader from "./service_header_m.png";
@@ -50,13 +46,11 @@ export {
   aboutHero,
   group17,
   wheelChair,
-  gallery1,
-  gallery2,
+  
   tife,
   kosi,
   auxtnn,
-  gallery3,
-  gallery4,
+
   vector,
   serviceHero,
   mobileHeader,

@@ -1,20 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { navLinks } from "@/constant";
+import { navLinks } from "../../constant";
 import Form from "./Form";
 import { HiMenuAlt1, HiX } from "react-icons/hi";
-import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormHelperText from "@mui/material/FormHelperText";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 import Link from "next/link";
-import { logo_on_white } from "@/public/images";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Nav = () => {
   const [toggle, setIsToggle] = useState(false);
+
+
 
   const [openModal, setOpenModal] = useState(false);
 
@@ -53,16 +49,24 @@ const Nav = () => {
   }, [toggle]);
 
   return (
-    <nav className=" sticky top-0 z-20 bg-white px-[1.16rem] pt-[.7rem] md:pt-[1.5rem] md:pl-[7rem] justify-between items-center flex md:pr-[5.7rem] border-b-2 pb-4">
+    <nav className=" sticky top-0 z-20 h-full bg-white px-[1.16rem] pt-[.7rem] md:pt-[1.5rem] md:pl-[7rem] justify-between items-center flex md:pr-[5.7rem] border-b-2 pb-4">
       {/* logo */}
       <Link href="/" className="">
-        <Image
-          src={logo_on_white}
-          width={150}
-          height={150}
-          className="relative"
-          alt="logo"
-        />
+      <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+        >
+          <Image
+            alt="logo"
+            src="/images/logo2.png"
+            width={160}
+            height={100}
+            sizes="100vw"
+            className="w-[9rem] h-auto"
+            unoptimized
+          />
+        </motion.div>
       </Link>
       {/* navlinks */}
 
@@ -73,12 +77,12 @@ const Nav = () => {
           className=" w-[2rem] h-[2rem] text-primary"
         />
         {toggle && (
-          <div className="h-[100vh] bg-primary absolute top-0 w-[80vw] right-0 z-10">
+          <div className="mobile-menu h-[100vh] bg-primary absolute top-0 w-[80vw] right-0 z-10">
             <HiX
               className="absolute right-0 text-white mr-[12px] top-[12px] w-[2rem] h-[2rem]"
               onClick={() => setIsToggle(!toggle)}
             />
-            <ul className="flex flex-col gap-[2.5rem] mt-[3rem] pl-[2rem]">
+            <ul className="flex flex-col gap-[2.5rem] mt-[3rem] px-[2rem]">
               {navLinks.map((items) => {
                 return (
                   <li key={items.key} className="flex flex-col gap-[3rem]">
@@ -89,16 +93,18 @@ const Nav = () => {
                     >
                       {items.title}
                     </Link>
+                    
                   </li>
                 );
               })}
-              <Link href="" className="text-white uppercase">
-                {" "}
-                Form
-              </Link>
-              <Link href="" className="text-white uppercase">
-                Join us
-              </Link>
+            
+           
+            <button
+              onClick={handleOpen}
+              className="text-primary bg-white rounded-[1rem] px-[2rem] py-[.75rem] h-[3rem] uppercase"
+            >
+              Join Us
+            </button>
             </ul>
           </div>
         )}
@@ -125,9 +131,7 @@ const Nav = () => {
               );
             })}
 
-            <button className="text-heading text-[1rem] font-[600] tracking-[0.08rem] uppercase">
-              Form
-            </button>
+          
 
             <button
               onClick={handleOpen}

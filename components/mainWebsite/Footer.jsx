@@ -1,10 +1,10 @@
 import React from "react";
-import { mainFooterLinks } from "@/constant";
+import { mainFooterLinks } from "../../constant";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
 import Image from "next/image";
 import { Link } from "@mui/material";
-import { logo_on_white } from "@/public/images";
+import { logo_on_white } from "../../public/images";
 
 const Footer = () => {
   const getFullYear = () => {

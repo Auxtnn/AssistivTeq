@@ -1,6 +1,6 @@
 import React from "react";
 import { GoDotFill } from "react-icons/go";
-import { wheelChair } from "@/public/images";
+import { wheelChair } from "../../public/images";
 import Image from "next/image";
 
 const Goal = () => {

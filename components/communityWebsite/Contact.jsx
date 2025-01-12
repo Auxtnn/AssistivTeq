@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 
 import { FiPhone } from "react-icons/fi";
-import Form from "@/components/communityWebsite/Form";
+import Form from "./Form";
 
 const Contact = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -33,6 +33,9 @@ const Contact = () => {
               </p>
               <p className="text-heading text-[1rem] tracking-[0.04rem]">
                 +2349049802906
+              </p>
+              <p className="text-heading text-[1rem] tracking-[0.04rem]">
+                community@assistivteq.com
               </p>
             </div>
           </div>
