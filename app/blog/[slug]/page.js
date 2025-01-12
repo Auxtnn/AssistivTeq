@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { getPostBySlug } from "@/sanity/lib/query";
+import { getPostBySlug } from "../../../sanity/lib/query";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { FaArrowLeftLong } from "react-icons/fa6";

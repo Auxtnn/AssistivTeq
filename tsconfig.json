@@ -20,14 +20,17 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "sanity/lib/query.ts", "sanity/lib/query.ts"  ],
+    "**/*.tsx",
+    "sanity/lib/query.ts",
+    "sanity/lib/query.ts"
+  ],
   "exclude": [
     "node_modules"
   ]
